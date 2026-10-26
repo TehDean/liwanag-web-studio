@@ -1,4 +1,4 @@
-# Northline Studio (preview)
+# Liwanag Web Studio (preview)
 
 Landing page and four sample client sites (personal trainer, caterer, realtor, photographer) for a no-code website studio in West Orange, NJ.
 
