@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dana Reyes Homes sample site</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#111827;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF; color: #111827; font-family: Inter, system-ui, sans-serif">
+
+  <div style="background: #111827; color: #BFDBFE; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 600">Northline Studio</a> · demo business</div>
+
+  <header style="border-bottom: 1px solid #E5E7EB">
+    <nav style="max-width: 1160px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="display: flex; flex-direction: column; color: #111827; line-height: 1.1">
+        <span style="font-weight: 800; font-size: 18px; letter-spacing: -0.01em">Dana Reyes Homes</span>
+        <span style="font-size: 12px; color: #6B7280; font-weight: 500">Example Realty Group · NJ licensed salesperson</span>
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+        <a href="#sell" style="color: #374151">Selling</a>
+        <a href="#buy" style="color: #374151">Buying</a>
+        <a href="#sold" style="color: #374151">Recent sales</a>
+        <a href="#about" style="color: #374151">About</a>
+        <a href="#consult" style="background: #1D4ED8; color: #FFFFFF; padding: 10px 16px; border-radius: 10px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center">Book a consult</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO with valuation form -->
+  <section id="top" style="background: #1E2A44; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #93C5FD">West Orange &amp; Essex County</p>
+        <h1 style="margin: 0; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing: -0.03em">What's your home worth right now?</h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CBD5E1; max-width: 520px">Get a real, local estimate from an agent who's sold 40+ homes across Essex County, not an algorithm. No obligation, no spam.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 28px; font-size: 14px; color: #CBD5E1">
+          <span><strong style="color: #FFFFFF; font-size: 24px; display: block">18</strong>homes sold in 2026</span>
+          <span><strong style="color: #FFFFFF; font-size: 24px; display: block">12 days</strong>average time on market</span>
+          <span><strong style="color: #FFFFFF; font-size: 24px; display: block">101%</strong>of list price, on average</span>
+        </div>
+      </div>
+      <form style="flex: 1 1 380px; min-width: 0; max-width: 460px; background: #FFFFFF; color: #111827; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0,0,0,0.25)" aria-label="Free home valuation">
+        <div>
+          <p style="margin: 0; font-size: 20px; font-weight: 800">Free home valuation</p>
+          <p style="margin: 4px 0 0; font-size: 14px; color: #6B7280">You'll hear back from Dana within one business day.</p>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Property address
+          <input type="text" name="address" placeholder="123 Main St, West Orange, NJ" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; min-height: 46px">
+        </label>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
+            <input type="text" name="name" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; min-height: 46px">
+          </label>
+          <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Phone or email
+            <input type="text" name="contact" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; min-height: 46px">
+          </label>
+        </div>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">When are you thinking of selling?
+          <select name="timeline" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D1D5DB; border-radius: 10px; min-height: 46px; background: #FFFFFF">
+            <option>Just curious</option>
+            <option>In the next 3 months</option>
+            <option>3-12 months</option>
+            <option>Over a year</option>
+          </select>
+        </label>
+        <button type="button" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Get my estimate</button>
+        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">[Connect to CRM or email. Add consent text per brokerage rules.]</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- SELL / BUY paths -->
+  <section style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
+    <div id="sell" style="padding: 36px; border-radius: 20px; background: #EFF6FF; display: flex; flex-direction: column; gap: 14px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">Selling</p>
+      <h2 style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Sell for more, with less stress.</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #374151; line-height: 1.5">
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>Pricing strategy backed by recent neighborhood sales</li>
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>Professional photos, video and staging advice included</li>
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>Weekly updates so you always know what's happening</li>
+      </ul>
+      <a href="#consult" style="margin-top: 8px; font-weight: 600">Book a seller consult →</a>
+    </div>
+    <div id="buy" style="padding: 36px; border-radius: 20px; background: #F3F4F6; display: flex; flex-direction: column; gap: 14px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #1D4ED8">Buying</p>
+      <h2 style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Find the right home, not just a home.</h2>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #374151; line-height: 1.5">
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>First-time buyer walkthrough of the whole process</li>
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>Honest take on every showing, including what's wrong with it</li>
+        <li style="display: flex; gap: 10px"><span style="color: #1D4ED8; font-weight: 700">✓</span>Trusted lenders, inspectors and attorneys on speed dial</li>
+      </ul>
+      <a href="#consult" style="margin-top: 8px; font-weight: 600">Book a buyer consult →</a>
+    </div>
+  </section>
+
+  <!-- RECENT SALES -->
+  <section id="sold" style="background: #F9FAFB; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px">
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Recent sales</h2>
+        <p style="margin: 0; font-size: 14px; color: #6B7280">Hand-picked, not an MLS feed. Easy to update each month.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; overflow: hidden">
+          <img src="img/home-1.jpg" alt="Blue colonial house with a red front door" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; font-weight: 700; color: #047857; background: #ECFDF5; padding: 4px 8px; border-radius: 999px; align-self: flex-start">SOLD · 8 days</span>
+            <p style="margin: 6px 0 0; font-size: 18px; font-weight: 800">$649,000</p>
+            <p style="margin: 0; font-size: 14px; color: #6B7280">Colonial in West Orange · 3 bd · 1.5 ba</p>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; overflow: hidden">
+          <img src="img/home-2.jpg" alt="Large two-story house with a balcony" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; font-weight: 700; color: #047857; background: #ECFDF5; padding: 4px 8px; border-radius: 999px; align-self: flex-start">SOLD · over asking</span>
+            <p style="margin: 6px 0 0; font-size: 18px; font-weight: 800">$1,085,000</p>
+            <p style="margin: 0; font-size: 14px; color: #6B7280">Two-story in Montclair · 4 bd · 2.5 ba</p>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; overflow: hidden">
+          <img src="img/home-3.jpg" alt="White house with an attached garage and long driveway" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; font-weight: 700; color: #1D4ED8; background: #EFF6FF; padding: 4px 8px; border-radius: 999px; align-self: flex-start">REPRESENTED BUYER</span>
+            <p style="margin: 6px 0 0; font-size: 18px; font-weight: 800">$719,000</p>
+            <p style="margin: 0; font-size: 14px; color: #6B7280">Single-family in Verona · 3 bd · 2 ba</p>
+          </div>
+        </div>
+        <div style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; overflow: hidden">
+          <img src="img/home-4.jpg" alt="Two-story house with a front porch at dusk" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block">
+          <div style="padding: 16px; display: flex; flex-direction: column; gap: 4px">
+            <span style="font-size: 12px; font-weight: 700; color: #047857; background: #ECFDF5; padding: 4px 8px; border-radius: 999px; align-self: flex-start">SOLD · 5 days</span>
+            <p style="margin: 6px 0 0; font-size: 18px; font-weight: 800">$865,000</p>
+            <p style="margin: 0; font-size: 14px; color: #6B7280">Porch colonial in Maplewood · 3 bd · 1.5 ba</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + REVIEWS -->
+  <section id="about" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 0 1 320px; min-width: 0">
+      <img src="img/agent.jpg" alt="House keys held over a small model home" style="width: 100%; max-width: 320px; aspect-ratio: 4 / 5; border-radius: 20px; object-fit: cover; display: block">
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Hi, I'm Dana.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #4B5563">I grew up in West Orange and have helped families buy and sell across Essex County for nine years. I got into real estate after a stressful first purchase of my own, so I explain every step before it happens. Most of my business comes from past clients and their friends, which is exactly how I like it.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px">
+        <blockquote style="margin: 0; padding: 18px 20px; background: #F9FAFB; border-radius: 12px; font-size: 15px; line-height: 1.6; color: #111827">
+          "Dana priced our house right the first time. We had four offers in a week, and she answered every text, even on Sunday nights."
+          <footer style="margin-top: 8px; font-size: 13px; color: #6B7280">— Sample review</footer>
+        </blockquote>
+        <blockquote style="margin: 0; padding: 18px 20px; background: #F9FAFB; border-radius: 12px; font-size: 15px; line-height: 1.6; color: #111827">
+          "As first-time buyers we had no idea what we were doing. Dana walked us through every step and talked us out of a house with a bad roof."
+          <footer style="margin-top: 8px; font-size: 13px; color: #6B7280">— Sample review</footer>
+        </blockquote>
+      </div>
+      <a href="https://google.com" style="font-weight: 600; font-size: 15px">Read more reviews on Google →</a>
+    </div>
+  </section>
+
+  <!-- CONSULT BOOKING -->
+  <section id="consult" style="background: #111827; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px">
+      <div style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Book a free 30-minute consult.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CBD5E1">Pick a time that works. We'll meet by phone, video or at the house. No pressure, no paperwork.</p>
+      </div>
+      <div style="flex: 0 1 380px; min-width: 0; background: #FFFFFF; color: #111827; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; color: #6B7280">Next available</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Tue 4 · 10:00 AM</span>
+          <span style="padding: 12px; border: 2px solid #1D4ED8; color: #1D4ED8; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Tue 4 · 5:30 PM</span>
+          <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Wed 5 · 12:00 PM</span>
+          <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Sat 8 · 9:00 AM</span>
+        </div>
+        <button type="button" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 13px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; min-height: 46px; cursor: pointer">Confirm consult</button>
+        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">[Replace with scheduling embed.]</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E5E7EB">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #6B7280">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px">
+        <span style="font-weight: 800; color: #111827; font-size: 15px">Dana Reyes Homes</span>
+        <span>(973) 555-0129 · dana@danareyeshomes.example · West Orange, NJ</span>
+        <span>Site by <a href="index.html" style="font-weight: 600">Northline Studio</a> · Photos: Pexels</span>
+      </div>
+      <p style="margin: 0; line-height: 1.6">Dana Reyes, Licensed Real Estate Salesperson, Example Realty Group, West Orange, NJ. Equal Housing Opportunity.</p>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

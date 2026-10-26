@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Northline Studio</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#0F172A;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+a{color:#0F766E;text-decoration:none}a:hover{color:#115E59}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF; color: #0F172A; font-family: Inter, system-ui, sans-serif">
+
+  <!-- NAV -->
+  <header style="border-bottom: 1px solid #E5E7EB; background: #FFFFFF">
+    <nav style="max-width: 1200px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="display: flex; align-items: center; gap: 10px; color: #0F172A; font-weight: 800; font-size: 18px; letter-spacing: -0.01em">
+        <span style="width: 28px; height: 28px; border-radius: 8px; background: {{accent}}; display: inline-block" aria-hidden="true"></span>
+        {{studioName}}
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px; font-size: 15px; font-weight: 500">
+        <a href="#work" style="color: #334155">Work</a>
+        <a href="#how" style="color: #334155">How it works</a>
+        <a href="#pricing" style="color: #334155">Pricing</a>
+        <a href="#faq" style="color: #334155">FAQ</a>
+        <a href="#book" style="background: {{accent}}; color: #FFFFFF; padding: 10px 16px; border-radius: 10px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center">Book a free call</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 64px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: {{accent}}">Websites for trainers, caterers and local pros</p>
+      <h1 style="margin: 0; font-size: clamp(40px, 5.5vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing: -0.03em">A website that books your clients for you.</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #475569; max-width: 540px">You focus on your craft. We build a clean, modern site that takes bookings, collects deposits, sends reminders and answers the questions you're tired of answering.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#book" style="background: {{accent}}; color: #FFFFFF; padding: 14px 22px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Book a free 20-minute call</a>
+        <a href="#work" style="background: #F1F5F9; color: #0F172A; padding: 14px 22px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">See sample sites</a>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #64748B">Fixed prices. Live in 3-4 weeks. You own everything.</p>
+    </div>
+
+    <!-- mock booking card -->
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
+      <div style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 20px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.10); overflow: hidden">
+        <div style="padding: 14px 18px; border-bottom: 1px solid #E5E7EB; display: flex; align-items: center; gap: 8px">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; display: inline-block" aria-hidden="true"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; display: inline-block" aria-hidden="true"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #CBD5E1; display: inline-block" aria-hidden="true"></span>
+          <span style="margin-left: 8px; font-size: 13px; color: #64748B">yourclient.com/book</span>
+        </div>
+        <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px">
+          <div>
+            <p style="margin: 0 0 4px; font-size: 13px; color: #64748B">Book a session</p>
+            <p style="margin: 0; font-size: 20px; font-weight: 700">60-min Personal Training</p>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #E5E7EB; font-size: 14px; font-weight: 500">Mon 3</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; background: {{accent}}; color: #FFFFFF; font-size: 14px; font-weight: 600">Tue 4</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #E5E7EB; font-size: 14px; font-weight: 500">Wed 5</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #E5E7EB; font-size: 14px; font-weight: 500">Thu 6</div>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #E5E7EB; font-size: 14px">7:00 AM</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 2px solid {{accent}}; color: {{accent}}; font-size: 14px; font-weight: 600">8:00 AM</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #E5E7EB; font-size: 14px">5:30 PM</div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid #E5E7EB">
+            <div>
+              <p style="margin: 0; font-size: 13px; color: #64748B">Deposit due today</p>
+              <p style="margin: 0; font-size: 18px; font-weight: 700">$25.00</p>
+            </div>
+            <span style="background: #0F172A; color: #FFFFFF; padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 14px">Confirm booking</span>
+          </div>
+          <p style="margin: 0; font-size: 12px; color: #64748B; display: flex; align-items: center; gap: 6px">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Reminder text sent 24 hours before
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE STRIP -->
+  <section style="background: #F8FAFC; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 28px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px">
+      <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Online booking &amp; calendar sync
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+        Deposits &amp; payments
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg>
+        Automatic reminders
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0F766E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        FAQ chat assistant
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 640px; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Live in a few weeks, not a few months.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">One fixed process. You fill out one form, review twice, and we handle the rest.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <div style="padding: 28px; border: 1px solid #E5E7EB; border-radius: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #ECFDF5; color: #0F766E; display: inline-flex; align-items: center; justify-content: center; font-weight: 700">1</span>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 700">Free 20-minute call</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">We talk about how you take bookings or orders today and pick the package that fits.</p>
+      </div>
+      <div style="padding: 28px; border: 1px solid #E5E7EB; border-radius: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #ECFDF5; color: #0F766E; display: inline-flex; align-items: center; justify-content: center; font-weight: 700">2</span>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 700">One simple intake form</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">Your services, prices, hours and photos. That's all we need to start building.</p>
+      </div>
+      <div style="padding: 28px; border: 1px solid #E5E7EB; border-radius: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="width: 40px; height: 40px; border-radius: 12px; background: #ECFDF5; color: #0F766E; display: inline-flex; align-items: center; justify-content: center; font-weight: 700">3</span>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 700">Review, launch, relax</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">Two rounds of edits, then we connect your domain and walk you through it in 15 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMPLE WORK -->
+  <section id="work" style="background: #0F172A; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+        <div style="max-width: 600px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Sample sites</h2>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CBD5E1">Click any sample to open it. Each one is built the way we'd build yours.</p>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #94A3B8">Demo businesses, real features</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+        <a href="trainer.html" style="display: flex; flex-direction: column; background: #1E293B; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #334155">
+          <div style="height: 200px; background: #163A3A; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+            <img src="img/trainer-hero.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+            <span style="position: relative; background: #FFFFFF; color: #0F172A; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Ridge Fitness</span>
+          </div>
+          <div style="padding: 20px; display: flex; flex-direction: column; gap: 6px">
+            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600">Personal trainer</p>
+            <p style="margin: 0; font-size: 16px; font-weight: 600">Session booking, 10-packs and deposits</p>
+            <span style="margin-top: 8px; font-size: 14px; color: #5EEAD4; font-weight: 600">View sample →</span>
+          </div>
+        </a>
+        <a href="caterer.html" style="display: flex; flex-direction: column; background: #1E293B; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #334155">
+          <div style="height: 200px; background: #3F2A1E; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+            <img src="img/cater-hero-1.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+            <span style="position: relative; background: #FFFFFF; color: #0F172A; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Maple &amp; Thyme</span>
+          </div>
+          <div style="padding: 20px; display: flex; flex-direction: column; gap: 6px">
+            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600">Caterer / home baker</p>
+            <p style="margin: 0; font-size: 16px; font-weight: 600">Menus, event inquiries and date deposits</p>
+            <span style="margin-top: 8px; font-size: 14px; color: #5EEAD4; font-weight: 600">View sample →</span>
+          </div>
+        </a>
+        <a href="realtor.html" style="display: flex; flex-direction: column; background: #1E293B; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #334155">
+          <div style="height: 200px; background: #1E2A44; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+            <img src="img/home-1.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+            <span style="position: relative; background: #FFFFFF; color: #0F172A; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Dana Reyes Homes</span>
+          </div>
+          <div style="padding: 20px; display: flex; flex-direction: column; gap: 6px">
+            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600">Real estate agent</p>
+            <p style="margin: 0; font-size: 16px; font-weight: 600">Lead capture, home valuation and consults</p>
+            <span style="margin-top: 8px; font-size: 14px; color: #5EEAD4; font-weight: 600">View sample →</span>
+          </div>
+        </a>
+        <a href="photographer.html" style="display: flex; flex-direction: column; background: #1E293B; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #334155">
+          <div style="height: 200px; background: #2A2824; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+            <img src="img/photo-hero.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
+            <span style="position: relative; background: #FFFFFF; color: #0F172A; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Wren Avenue</span>
+          </div>
+          <div style="padding: 20px; display: flex; flex-direction: column; gap: 6px">
+            <p style="margin: 0; font-size: 13px; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600">Photographer / studio</p>
+            <p style="margin: 0; font-size: 16px; font-weight: 600">Portfolio, session retainers and studio rental</p>
+            <span style="margin-top: 8px; font-size: 14px; color: #5EEAD4; font-weight: 600">View sample →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 640px; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Simple, fixed pricing.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">Half up front, half at launch. You pay your website platform directly, so there are no hidden markups.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch">
+      <div style="padding: 32px; border: 1px solid #E5E7EB; border-radius: 20px; display: flex; flex-direction: column; gap: 20px">
+        <div>
+          <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em">Starter Site</p>
+          <p style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em">$1,500</p>
+          <p style="margin: 4px 0 0; font-size: 14px; color: #64748B">one-time</p>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+          <li>3-5 pages, mobile-ready</li>
+          <li>Contact form</li>
+          <li>Basic SEO + Google Business Profile</li>
+          <li>2 rounds of revisions</li>
+        </ul>
+        <a href="#book" style="margin-top: auto; text-align: center; border: 2px solid #0F172A; color: #0F172A; padding: 12px 18px; border-radius: 12px; font-weight: 600; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Start here</a>
+      </div>
+      <div style="padding: 32px; border: 2px solid {{accent}}; border-radius: 20px; display: flex; flex-direction: column; gap: 20px; position: relative; background: #FFFFFF">
+        <span style="position: absolute; top: -14px; left: 32px; background: {{accent}}; color: #FFFFFF; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase">Most popular</span>
+        <div>
+          <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em">Booking Site</p>
+          <p style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em">$2,400</p>
+          <p style="margin: 4px 0 0; font-size: 14px; color: #64748B">one-time</p>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+          <li>Everything in Starter, 5-7 pages</li>
+          <li>Online booking + calendar sync</li>
+          <li>Deposits or payment at booking</li>
+          <li>Automatic email &amp; text reminders</li>
+          <li>Packages, memberships or online menu</li>
+        </ul>
+        <a href="#book" style="margin-top: auto; text-align: center; background: {{accent}}; color: #FFFFFF; padding: 12px 18px; border-radius: 12px; font-weight: 600; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Book a free call</a>
+      </div>
+      <div style="padding: 32px; border: 1px solid #E5E7EB; border-radius: 20px; display: flex; flex-direction: column; gap: 20px">
+        <div>
+          <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #64748B; text-transform: uppercase; letter-spacing: 0.08em">Full Service</p>
+          <p style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.02em">$3,500</p>
+          <p style="margin: 4px 0 0; font-size: 14px; color: #64748B">one-time</p>
+        </div>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #334155">
+          <li>Everything in Booking, 5-8 pages</li>
+          <li>FAQ &amp; lead-capture chat assistant</li>
+          <li>Online ordering or memberships</li>
+          <li>3 rounds of revisions</li>
+          <li>First month of care included</li>
+        </ul>
+        <a href="#book" style="margin-top: auto; text-align: center; border: 2px solid #0F172A; color: #0F172A; padding: 12px 18px; border-radius: 12px; font-weight: 600; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Let's talk</a>
+      </div>
+    </div>
+    <div style="padding: 24px 28px; background: #F8FAFC; border: 1px solid #E5E7EB; border-radius: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <p style="margin: 0; font-size: 18px; font-weight: 700">Care plan: $100/month</p>
+        <p style="margin: 0; font-size: 15px; color: #475569">Updates, up to 4 small changes a month, booking checks and support within 2 business days. Cancel any time with 30 days' notice.</p>
+      </div>
+      <a href="#faq" style="font-weight: 600; font-size: 15px">What's included? →</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: #F8FAFC; border-top: 1px solid #E5E7EB">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+      <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Questions, answered.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">Anything else? Ask on the call, or try the chat assistant in the corner.</p>
+      </div>
+      <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <details style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px">
+          <summary style="font-weight: 600; font-size: 16px; cursor: pointer">Do I own my website?</summary>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Yes. The domain, the site and the payment account are all in your name. We're added as a collaborator so we can help, and you can remove us at any time.</p>
+        </details>
+        <details style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px">
+          <summary style="font-weight: 600; font-size: 16px; cursor: pointer">What do I need to provide?</summary>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Your services and prices, your hours, a few photos and a short bio. One intake form covers it all, and we can help with writing if you'd rather not.</p>
+        </details>
+        <details style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px">
+          <summary style="font-weight: 600; font-size: 16px; cursor: pointer">I already use a booking app. Can I keep it?</summary>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Usually, yes. We can link or embed the tool you already use, so your clients get a better site without you changing how you work.</p>
+        </details>
+        <details style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px">
+          <summary style="font-weight: 600; font-size: 16px; cursor: pointer">Are there other monthly costs?</summary>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Your website platform charges its own subscription (typically $29-39/month) and payment processors take a small fee per transaction. You pay those directly. Our care plan is optional.</p>
+        </details>
+        <details style="background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px">
+          <summary style="font-weight: 600; font-size: 16px; cursor: pointer">How long does it take?</summary>
+          <p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Most Booking Sites launch in 3-4 weeks once we have your content. The biggest delay is usually photos, so we'll give you a simple checklist up front.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK A CALL -->
+  <section id="book" style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+    <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Book a free 20-minute call.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">No pitch, no pressure. We'll look at how you take bookings today and tell you honestly whether a new site would help.</p>
+      <p style="margin: 0; font-size: 15px; color: #64748B">Prefer email? <a href="mailto:hello@example.com" style="font-weight: 600">hello@[yourdomain].com</a></p>
+    </div>
+    <form style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 28px; border: 1px solid #E5E7EB; border-radius: 20px; background: #FFFFFF" aria-label="Book a call">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
+        <input type="text" name="name" placeholder="Your name" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email
+        <input type="email" name="email" placeholder="you@example.com" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">What do you do?
+        <select name="type" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 10px; min-height: 46px; background: #FFFFFF">
+          <option>Personal trainer / fitness</option>
+          <option>Catering / food</option>
+          <option>Real estate</option>
+          <option>Photography</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">How do you take bookings or orders today?
+        <textarea name="notes" rows="3" placeholder="Texts, DMs, phone calls, an app..." style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #CBD5E1; border-radius: 10px; resize: vertical"></textarea>
+      </label>
+      <button type="button" style="font: inherit; background: {{accent}}; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Request my free call</button>
+      <p style="margin: 0; font-size: 13px; color: #64748B; text-align: center">We reply within one business day. [Replace this form with your scheduling embed.]</p>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid #E5E7EB; background: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 32px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px; color: #64748B">
+      <span style="display: flex; align-items: center; gap: 10px; color: #0F172A; font-weight: 700">
+        <span style="width: 20px; height: 20px; border-radius: 6px; background: {{accent}}; display: inline-block" aria-hidden="true"></span>
+        {{studioName}}
+      </span>
+      <span>Websites with booking, payments and chat for small businesses. West Orange, NJ.</span>
+      <span style="display: flex; gap: 20px">
+        <a href="#top" style="color: #64748B">Privacy</a>
+        <a href="#top" style="color: #64748B">Terms</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- CHAT ASSISTANT BUBBLE -->
+  <div style="position: fixed; right: 24px; bottom: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 10">
+    <sc-if value="{{chatOpen}}" hint-placeholder-val="{{ false }}">
+      <div style="width: 300px; background: #FFFFFF; border: 1px solid #E5E7EB; border-radius: 16px; box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16); overflow: hidden">
+        <div style="padding: 14px 16px; background: #0F172A; color: #FFFFFF; font-weight: 600; font-size: 14px">Ask about pricing, timelines or booking</div>
+        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
+          <div style="background: #F1F5F9; padding: 10px 12px; border-radius: 10px; color: #0F172A">Hi! I can answer quick questions about packages, timelines and what's included. For anything else, I'll pass you to a human.</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 6px">
+            <span style="border: 1px solid #CBD5E1; border-radius: 999px; padding: 6px 10px; font-size: 13px">How much does it cost?</span>
+            <span style="border: 1px solid #CBD5E1; border-radius: 999px; padding: 6px 10px; font-size: 13px">How long does it take?</span>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+    <button type="button" onClick="{{toggleChat}}" aria-label="Open chat assistant" style="width: 56px; height: 56px; border-radius: 50%; border: 0; background: {{accent}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"studioName":{"editor":"text","default":"Northline Studio","section":"Brand"},"accent":{"editor":"color","default":"#0F766E","options":["#0F766E","#2563EB","#7C3AED","#DC2626"],"section":"Brand"},"$preview":{"width":1440,"height":4200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { chatOpen: false };
+  }
+  renderVals() {
+    return {
+      studioName: this.props.studioName ?? 'Northline Studio',
+      accent: this.props.accent ?? '#0F766E',
+      chatOpen: this.state.chatOpen,
+      toggleChat: () => this.setState({ chatOpen: !this.state.chatOpen })
+    };
+  }
+}
+</script>
+</body>
+</html>

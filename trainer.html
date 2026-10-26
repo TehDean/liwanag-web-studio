@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ridge Fitness sample site</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#0B1F1E;background:#FFFFFF;-webkit-font-smoothing:antialiased}
+a{color:#0B6E5F;text-decoration:none}a:hover{color:#085246}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFFFF; color: #0B1F1E; font-family: Inter, system-ui, sans-serif">
+
+  <div style="background: #0B1F1E; color: #A7F3D0; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 600">Northline Studio</a> · demo business</div>
+
+  <header style="background: #FFFFFF; border-bottom: 1px solid #E5E7EB">
+    <nav style="max-width: 1160px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="font-weight: 900; font-size: 20px; letter-spacing: -0.02em; color: #0B1F1E">RIDGE<span style="color: #0B6E5F">FITNESS</span></a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+        <a href="#services" style="color: #334155">Training</a>
+        <a href="#packages" style="color: #334155">Packages</a>
+        <a href="#about" style="color: #334155">About</a>
+        <a href="#faq" style="color: #334155">FAQ</a>
+        <a href="#book" style="background: #0B6E5F; color: #FFFFFF; padding: 10px 16px; border-radius: 999px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center">Book a session</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="background: #0B1F1E; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6EE7B7">Personal training · West Orange, NJ</p>
+        <h1 style="margin: 0; font-size: clamp(40px, 5.5vw, 68px); line-height: 1.0; font-weight: 900; letter-spacing: -0.03em">Stronger in 12 weeks. Guaranteed plan, zero guesswork.</h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #CBD5E1; max-width: 520px">One-on-one and small-group training for busy adults. Book online, pay a small deposit, and get a reminder text the day before.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#book" style="background: #6EE7B7; color: #0B1F1E; padding: 14px 24px; border-radius: 999px; font-weight: 700; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Book a free intro session</a>
+          <a href="#packages" style="border: 2px solid #334155; color: #FFFFFF; padding: 14px 24px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">See packages</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 28px; padding-top: 8px; font-size: 14px; color: #CBD5E1">
+          <span><strong style="color: #FFFFFF; font-size: 22px; display: block">8+</strong>years coaching</span>
+          <span><strong style="color: #FFFFFF; font-size: 22px; display: block">200+</strong>clients trained</span>
+          <span><strong style="color: #FFFFFF; font-size: 22px; display: block">6am-8pm</strong>sessions, Mon-Sat</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+        <img src="img/trainer-hero.jpg" alt="Two people training with weights in a gym" style="width: 100%; max-width: 400px; aspect-ratio: 4 / 5; border-radius: 24px; object-fit: cover; display: block">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 600px; display: flex; flex-direction: column; gap: 12px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Training that fits your week.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">Every session is booked online. Pick a time, pay a $25 deposit, done.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px">
+      <div style="padding: 28px; border-radius: 20px; background: #F0FDF8; display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B6E5F">60 min</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">1-on-1 Personal Training</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">A plan built around your goals, schedule and any old injuries. Strength, mobility and conditioning.</p>
+        <p style="margin: 8px 0 0; font-size: 24px; font-weight: 800">$85 <span style="font-size: 14px; font-weight: 500; color: #64748B">/ session</span></p>
+        <a href="#book" style="margin-top: 8px; font-weight: 600">Book 1-on-1 →</a>
+      </div>
+      <div style="padding: 28px; border-radius: 20px; background: #F0FDF8; display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B6E5F">45 min · 2-4 people</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Small Group Training</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">Bring a friend or join a group. Same coaching, lower price, more accountability.</p>
+        <p style="margin: 8px 0 0; font-size: 24px; font-weight: 800">$40 <span style="font-size: 14px; font-weight: 500; color: #64748B">/ person</span></p>
+        <a href="#book" style="margin-top: 8px; font-weight: 600">See group times →</a>
+      </div>
+      <div style="padding: 28px; border-radius: 20px; background: #F0FDF8; display: flex; flex-direction: column; gap: 10px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #0B6E5F">Monthly</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Online Coaching</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #475569">A weekly program in your phone, form checks by video, and a check-in call every two weeks.</p>
+        <p style="margin: 8px 0 0; font-size: 24px; font-weight: 800">$149 <span style="font-size: 14px; font-weight: 500; color: #64748B">/ month</span></p>
+        <a href="#book" style="margin-top: 8px; font-weight: 600">Start online →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section id="packages" style="background: #F8FAFC; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="max-width: 600px; display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Save with a session pack.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #475569">Buy once online, then book sessions whenever you like. Packs never expire for 6 months.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px">
+        <div style="padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font-size: 15px; font-weight: 600; color: #64748B">Single session</p>
+          <p style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em">$85</p>
+          <p style="margin: 0; font-size: 14px; color: #64748B">Try it out</p>
+          <button type="button" style="font: inherit; margin-top: auto; border: 2px solid #0B1F1E; background: #FFFFFF; color: #0B1F1E; padding: 12px; border-radius: 999px; font-weight: 600; min-height: 46px; cursor: pointer">Buy &amp; book</button>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font-size: 15px; font-weight: 600; color: #64748B">5-pack</p>
+          <p style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em">$400</p>
+          <p style="margin: 0; font-size: 14px; color: #0B6E5F; font-weight: 600">$80 per session · save $25</p>
+          <button type="button" style="font: inherit; margin-top: auto; border: 2px solid #0B1F1E; background: #FFFFFF; color: #0B1F1E; padding: 12px; border-radius: 999px; font-weight: 600; min-height: 46px; cursor: pointer">Buy 5-pack</button>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; background: #0B1F1E; color: #FFFFFF; display: flex; flex-direction: column; gap: 12px; position: relative">
+          <span style="position: absolute; top: -12px; left: 24px; background: #6EE7B7; color: #0B1F1E; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em">Best value</span>
+          <p style="margin: 0; font-size: 15px; font-weight: 600; color: #A7F3D0">10-pack</p>
+          <p style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em">$750</p>
+          <p style="margin: 0; font-size: 14px; color: #6EE7B7; font-weight: 600">$75 per session · save $100</p>
+          <button type="button" style="font: inherit; margin-top: auto; border: 0; background: #6EE7B7; color: #0B1F1E; padding: 12px; border-radius: 999px; font-weight: 700; min-height: 46px; cursor: pointer">Buy 10-pack</button>
+        </div>
+        <div style="padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid #E5E7EB; display: flex; flex-direction: column; gap: 12px">
+          <p style="margin: 0; font-size: 15px; font-weight: 600; color: #64748B">Monthly unlimited groups</p>
+          <p style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em">$199</p>
+          <p style="margin: 0; font-size: 14px; color: #64748B">Cancel anytime</p>
+          <button type="button" style="font: inherit; margin-top: auto; border: 2px solid #0B1F1E; background: #FFFFFF; color: #0B1F1E; padding: 12px; border-radius: 999px; font-weight: 600; min-height: 46px; cursor: pointer">Join</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + TESTIMONIAL -->
+  <section id="about" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 300px; min-width: 0">
+      <img src="img/trainer-about.jpg" alt="Hands gripping a kettlebell during a training session" style="width: 100%; max-width: 420px; aspect-ratio: 1 / 1; border-radius: 24px; object-fit: cover; display: block">
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Hi, I'm Jordan.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #475569">I've coached in Essex County for eight years, mostly with busy adults who want to get strong without living at the gym. Every plan starts with how you move today, old injuries included, and builds from there. Clients usually say the best part is never having to guess what to do next.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <span style="background: #F1F5F9; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 600">NASM-CPT</span>
+        <span style="background: #F1F5F9; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 600">Precision Nutrition L1</span>
+        <span style="background: #F1F5F9; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 600">CPR / AED</span>
+      </div>
+      <blockquote style="margin: 8px 0 0; padding: 20px 24px; border-left: 4px solid #6EE7B7; background: #F8FAFC; border-radius: 0 12px 12px 0; font-size: 16px; line-height: 1.6; color: #0B1F1E">
+        "I'd quit every gym I ever joined. Booking online and getting a text the night before is why I've stuck with this for a year, and I'm lifting more than I thought I could."
+        <footer style="margin-top: 8px; font-size: 14px; color: #64748B">— Sample review</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="background: #0B1F1E; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Book your session.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CBD5E1">Pick a service and a time. A $25 deposit holds your spot and comes off the session price. Cancel free up to 24 hours before.</p>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #CBD5E1">
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; border-radius: 50%; background: #6EE7B7; display: inline-block" aria-hidden="true"></span>Confirmation email right away</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; border-radius: 50%; background: #6EE7B7; display: inline-block" aria-hidden="true"></span>Text reminder 24 hours before</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; border-radius: 50%; background: #6EE7B7; display: inline-block" aria-hidden="true"></span>Intake &amp; waiver form sent after booking</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; color: #0B1F1E; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 18px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 600; color: #64748B">1. Choose a service</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{services}}" as="s" hint-placeholder-count="3">
+              <button type="button" onClick="{{s.pick}}" style="font: inherit; padding: 10px 14px; border-radius: 999px; border: 2px solid {{s.border}}; background: {{s.bg}}; color: {{s.fg}}; font-weight: 600; font-size: 14px; min-height: 44px; cursor: pointer">{{s.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 600; color: #64748B">2. Pick a day</p>
+          <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{days}}" as="d" hint-placeholder-count="5">
+              <button type="button" onClick="{{d.pick}}" style="font: inherit; padding: 10px 0; border-radius: 10px; border: 1px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}; font-weight: 600; font-size: 14px; min-height: 44px; cursor: pointer">{{d.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 600; color: #64748B">3. Pick a time</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{times}}" as="t" hint-placeholder-count="6">
+              <button type="button" onClick="{{t.pick}}" style="font: inherit; padding: 10px 0; border-radius: 10px; border: 1px solid {{t.border}}; background: {{t.bg}}; color: {{t.fg}}; font-weight: 500; font-size: 14px; min-height: 44px; cursor: pointer">{{t.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #E5E7EB; flex-wrap: wrap; gap: 12px">
+          <div>
+            <p style="margin: 0; font-size: 13px; color: #64748B">{{summary}}</p>
+            <p style="margin: 0; font-size: 20px; font-weight: 800">$25 deposit</p>
+          </div>
+          <button type="button" style="font: inherit; background: #0B6E5F; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 999px; font-weight: 700; font-size: 15px; min-height: 46px; cursor: pointer">Pay deposit &amp; confirm</button>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #64748B; text-align: center">[Replace this block with the live booking embed.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px">
+    <div style="flex: 1 1 280px; min-width: 0">
+      <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Common questions</h2>
+    </div>
+    <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+      <details style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px"><summary style="font-weight: 600; cursor: pointer">What's your cancellation policy?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Cancel or reschedule free up to 24 hours before. Inside 24 hours, the deposit is kept.</p></details>
+      <details style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px"><summary style="font-weight: 600; cursor: pointer">Where do we train?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Our private training studio in West Orange, with parking out back. Online coaching happens wherever you are.</p></details>
+      <details style="border: 1px solid #E5E7EB; border-radius: 12px; padding: 18px 20px"><summary style="font-weight: 600; cursor: pointer">I'm a total beginner. Is that OK?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #475569">Most clients start there. The free intro session is exactly for figuring out where you are and where to begin.</p></details>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E5E7EB">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #64748B">
+      <span style="font-weight: 800; color: #0B1F1E">RIDGE<span style="color: #0B6E5F">FITNESS</span></span>
+      <span>West Orange, NJ · (973) 555-0142 · hello@ridgefitness.example</span>
+      <span>Site by <a href="index.html" style="font-weight: 600">Northline Studio</a> · Photos: Pexels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { service: 0, day: 1, time: 1 };
+  }
+  renderVals() {
+    const sel = { border: '#0B6E5F', bg: '#0B6E5F', fg: '#FFFFFF' };
+    const off = { border: '#CBD5E1', bg: '#FFFFFF', fg: '#0B1F1E' };
+    const svc = ['1-on-1 (60 min)', 'Small group (45 min)', 'Free intro (30 min)'];
+    const dayNames = ['Mon 3', 'Tue 4', 'Wed 5', 'Thu 6', 'Fri 7'];
+    const timeNames = ['6:00 AM', '7:00 AM', '8:00 AM', '12:00 PM', '5:30 PM', '6:30 PM'];
+    const mk = (names, key) => names.map((label, i) => {
+      const on = this.state[key] === i;
+      return { label, ...(on ? sel : off), pick: () => this.setState({ [key]: i }) };
+    });
+    return {
+      services: mk(svc, 'service'),
+      days: mk(dayNames, 'day'),
+      times: mk(timeNames, 'time'),
+      summary: svc[this.state.service] + ' · ' + dayNames[this.state.day] + ' · ' + timeNames[this.state.time]
+    };
+  }
+}
+</script>
+</body>
+</html>

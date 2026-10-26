@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maple and Thyme sample site</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#2A1D14;background:#FFFCF7;-webkit-font-smoothing:antialiased}
+a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFCF7; color: #2A1D14; font-family: Inter, system-ui, sans-serif">
+
+  <div style="background: #2A1D14; color: #F5D9B8; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 600">Northline Studio</a> · demo business</div>
+
+  <header style="border-bottom: 1px solid #EADFD2">
+    <nav style="max-width: 1160px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 24px; color: #2A1D14; letter-spacing: -0.01em">Maple &amp; Thyme</a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
+        <a href="#menus" style="color: #4A3A2E">Menus</a>
+        <a href="#how" style="color: #4A3A2E">How it works</a>
+        <a href="#gallery" style="color: #4A3A2E">Gallery</a>
+        <a href="#faq" style="color: #4A3A2E">FAQ</a>
+        <a href="#inquire" style="background: #9A4A1E; color: #FFFFFF; padding: 10px 18px; border-radius: 10px; font-weight: 600; min-height: 44px; display: inline-flex; align-items: center">Request a quote</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1160px; margin: 0 auto; padding: 80px 24px 64px; width: 100%; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px">
+      <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #9A4A1E">Small-batch catering · Essex County, NJ</p>
+      <h1 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: clamp(42px, 5.5vw, 68px); line-height: 1.02; font-weight: 600; letter-spacing: -0.02em">Food people talk about long after the party.</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #5C4A3C; max-width: 520px">Seasonal menus for weddings, showers, office lunches and dinner parties of 10 to 150. Tell us the date and headcount, and get a quote within 24 hours.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#inquire" style="background: #9A4A1E; color: #FFFFFF; padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Request a quote</a>
+        <a href="#menus" style="border: 2px solid #2A1D14; color: #2A1D14; padding: 14px 24px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Browse menus</a>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #7A6657">Minimum order $350 · 10-person minimum · Deposits hold your date</p>
+    </div>
+    <div style="flex: 1 1 360px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <img src="img/cater-hero-1.jpg" alt="Charcuterie board with cheeses, cured meats and fruit" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; object-fit: cover; display: block">
+      <img src="img/cater-hero-2.jpg" alt="Serving platters set out on a dinner table" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; object-fit: cover; display: block; margin-top: 32px">
+      <img src="img/cater-hero-3.jpg" alt="Buffet table set with salads, platters and chafing dishes" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; object-fit: cover; display: block">
+      <img src="img/cater-hero-4.jpg" alt="Dessert table with tarts and pastries on stands" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 18px; object-fit: cover; display: block; margin-top: 32px">
+    </div>
+  </section>
+
+  <!-- MENUS -->
+  <section id="menus" style="background: #FFFFFF; border-top: 1px solid #EADFD2; border-bottom: 1px solid #EADFD2">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px">
+        <div style="max-width: 560px; display: flex; flex-direction: column; gap: 12px">
+          <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Sample menus</h2>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #5C4A3C">Starting points, not limits. Every menu can be adjusted for allergies, vegetarian and gluten-free guests.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <sc-for list="{{menuTabs}}" as="m" hint-placeholder-count="3">
+            <button type="button" onClick="{{m.pick}}" style="font: inherit; padding: 10px 16px; border-radius: 999px; border: 1px solid {{m.border}}; background: {{m.bg}}; color: {{m.fg}}; font-weight: 600; font-size: 14px; min-height: 44px; cursor: pointer">{{m.label}}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+        <sc-for list="{{menuItems}}" as="it" hint-placeholder-count="6">
+          <div style="padding: 22px 24px; border: 1px solid #EADFD2; border-radius: 16px; background: #FFFCF7; display: flex; flex-direction: column; gap: 6px">
+            <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
+              <h3 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 20px; font-weight: 600">{{it.name}}</h3>
+              <span style="font-weight: 700; color: #9A4A1E; white-space: nowrap">{{it.price}}</span>
+            </div>
+            <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #5C4A3C">{{it.desc}}</p>
+            <span style="font-size: 12px; color: #7A6657; font-weight: 600; letter-spacing: 0.04em">{{it.tag}}</span>
+          </div>
+        </sc-for>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #7A6657">Prices are per person unless noted. Staffing, rentals and delivery quoted separately.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">From inquiry to table in four steps</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: Fraunces, Georgia, serif; font-size: 44px; color: #D9B892; line-height: 1">01</span>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 700">Tell us about the event</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Date, headcount, location and the kind of food you're picturing. Two minutes, online.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: Fraunces, Georgia, serif; font-size: 44px; color: #D9B892; line-height: 1">02</span>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 700">Get a quote in 24 hours</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">A proposed menu and clear per-person price. We'll tweak it until it's right.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: Fraunces, Georgia, serif; font-size: 44px; color: #D9B892; line-height: 1">03</span>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 700">Hold your date</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">A 25% deposit, paid online, locks it in. Final headcount is due 7 days out.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span style="font-family: Fraunces, Georgia, serif; font-size: 44px; color: #D9B892; line-height: 1">04</span>
+        <h3 style="margin: 0; font-size: 18px; font-weight: 700">We cook, deliver, and set up</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Drop-off or full service with staff. You get to enjoy your own party.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" style="background: #2A1D14; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 12px">
+        <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 36px; font-weight: 600; letter-spacing: -0.02em">Recent events</h2>
+        <a href="https://instagram.com" style="color: #F5D9B8; font-weight: 600; font-size: 15px">Follow on Instagram →</a>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px">
+        <img src="img/cater-g1.jpg" alt="Outdoor buffet with seafood platters" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+        <img src="img/cater-g2.jpg" alt="Dessert table with a tiered cake and candelabras" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+        <img src="img/cater-g3.jpg" alt="Outdoor wedding dessert table with flowers" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+        <img src="img/cater-g4.jpg" alt="Glass dessert display with pastries" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+        <img src="img/cater-g5.jpg" alt="Sweets table with flowers and jars" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+        <img src="img/cater-g6.jpg" alt="Cake table set for an outdoor event" style="width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; display: block">
+      </div>
+      <blockquote style="margin: 12px 0 0; font-family: Fraunces, Georgia, serif; font-size: 22px; line-height: 1.5; color: #F5D9B8; max-width: 760px">
+        "We booked three weeks out for our rehearsal dinner. The quote came back the next morning, the deposit took two minutes, and our guests are still talking about the harvest table."
+        <footer style="margin-top: 10px; font-family: Inter, system-ui, sans-serif; font-size: 14px; color: #D9B892">— Sample review</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- INQUIRY FORM -->
+  <section id="inquire" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+    <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">Request a quote</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #5C4A3C">We reply within 24 hours with a proposed menu and price. If your date is available, you can hold it with a deposit right from the quote email.</p>
+      <div style="padding: 18px 20px; background: #F3E3CF; border-radius: 14px; font-size: 14px; line-height: 1.6; color: #4A3A2E">
+        <strong>Booking fast?</strong> Saturdays in June, September and October fill 2-3 months ahead.
+      </div>
+    </div>
+    <form style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 28px; border: 1px solid #EADFD2; border-radius: 20px; background: #FFFFFF" aria-label="Request a quote">
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
+        <input type="text" name="name" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Email
+        <input type="email" name="email" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Event date
+        <input type="date" name="date" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Guest count
+        <input type="number" name="guests" placeholder="e.g. 40" min="10" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; grid-column: 1 / -1">Type of event
+        <select name="type" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px; background: #FFFFFF">
+          <option>Wedding or rehearsal dinner</option>
+          <option>Shower or birthday</option>
+          <option>Office lunch or meeting</option>
+          <option>Dinner party</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; grid-column: 1 / -1">Anything we should know?
+        <textarea name="notes" rows="3" placeholder="Allergies, venue, style of service, budget range..." style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; resize: vertical"></textarea>
+      </label>
+      <button type="button" style="font: inherit; grid-column: 1 / -1; background: #9A4A1E; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Send my request</button>
+      <p style="margin: 0; grid-column: 1 / -1; font-size: 13px; color: #7A6657; text-align: center">No commitment. [Connect this form to the inquiry inbox and quote template.]</p>
+    </form>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background: #FFFFFF; border-top: 1px solid #EADFD2">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px">
+      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">Do you handle allergies and dietary needs?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Yes. Tell us in the request and every menu is adjusted. Nut-free, gluten-free and vegan options are always available.</p></div>
+      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">What's the minimum order?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">$350 or 10 guests, whichever is more. Smaller orders may be possible for pickup.</p></div>
+      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">How far do you deliver?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Within 20 miles of Montclair is included. Beyond that, a delivery fee is quoted up front.</p></div>
+      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">What if I need to cancel?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Deposits are refundable up to 14 days before the event, and transferable to a new date after that.</p></div>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #EADFD2">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #7A6657">
+      <span style="font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 18px; color: #2A1D14">Maple &amp; Thyme</span>
+      <span>Montclair, NJ · (973) 555-0187 · events@mapleandthyme.example</span>
+      <span>Site by <a href="index.html" style="font-weight: 600">Northline Studio</a> · Photos: Pexels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { tab: 0 };
+  }
+  renderVals() {
+    const tabs = ['Weddings & parties', 'Office lunches', 'Desserts & baking'];
+    const menus = [
+      [
+        { name: 'Harvest Table', price: '$42', desc: 'Herb-roasted chicken, maple-glazed root vegetables, farro salad, warm rolls and seasonal greens.', tag: 'FAMILY STYLE · GF OPTION' },
+        { name: 'Garden Buffet', price: '$36', desc: 'Grilled vegetable platters, lemon chicken skewers, orzo salad, focaccia and two dips.', tag: 'BUFFET · VEGETARIAN FRIENDLY' },
+        { name: 'Passed Appetizers', price: '$28', desc: 'Six seasonal bites per guest, served by our staff for the first hour of your event.', tag: 'COCKTAIL HOUR' },
+        { name: 'Plated Dinner', price: '$68', desc: 'Three courses with a choice of two entrées, plated and served. Includes staffing for up to 60.', tag: 'FULL SERVICE' }
+      ],
+      [
+        { name: 'Boxed Lunch', price: '$16', desc: 'Sandwich or salad, side, cookie and fruit, individually boxed and labeled.', tag: 'DROP-OFF · MIN 10' },
+        { name: 'Taco Bar', price: '$19', desc: 'Two proteins, black beans, rice, all the fixings and chips with salsa.', tag: 'DROP-OFF · GF' },
+        { name: 'Breakfast Spread', price: '$14', desc: 'Egg bites, pastries, fruit, yogurt parfaits and coffee service.', tag: 'MORNING MEETINGS' },
+        { name: 'Grazing Table', price: '$22', desc: 'Cheeses, cured meats, seasonal fruit, crackers, spreads and nuts, styled on site.', tag: 'HAPPY HOUR' }
+      ],
+      [
+        { name: 'Custom Cake', price: 'from $120', desc: 'Two-tier celebration cakes in your flavors. Tasting box available for $25.', tag: 'ORDER 2 WEEKS AHEAD' },
+        { name: 'Dessert Table', price: '$12', desc: 'Mini tarts, brownies, cookies and macarons, styled with stands and signage.', tag: 'PER PERSON' },
+        { name: 'Cookie Boxes', price: '$28', desc: 'A dozen assorted cookies in a gift box. Great for client thank-yous and favors.', tag: 'PER DOZEN · SHIPS LOCALLY' },
+        { name: 'Pie Season', price: '$32', desc: 'Apple, pumpkin and pecan pies for pickup. Pre-orders open October 1.', tag: 'SEASONAL · WHOLE PIE' }
+      ]
+    ];
+    const t = this.state.tab;
+    return {
+      menuTabs: tabs.map((label, i) => ({
+        label,
+        border: i === t ? '#9A4A1E' : '#D9CCBD',
+        bg: i === t ? '#9A4A1E' : '#FFFFFF',
+        fg: i === t ? '#FFFFFF' : '#2A1D14',
+        pick: () => this.setState({ tab: i })
+      })),
+      menuItems: menus[t]
+    };
+  }
+}
+</script>
+</body>
+</html>

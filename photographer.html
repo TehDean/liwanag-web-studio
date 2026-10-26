@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wren Avenue Studio sample site</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Manrope,system-ui,sans-serif;color:#161616;background:#F7F7F5;-webkit-font-smoothing:antialiased}
+a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
+*{box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #F7F7F5; color: #161616; font-family: Manrope, system-ui, sans-serif">
+
+  <div style="background: #161616; color: #D6D3CE; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 600">Northline Studio</a> · demo business</div>
+
+  <!-- NAV -->
+  <header style="border-bottom: 1px solid #E2E0DB; background: #F7F7F5">
+    <nav style="max-width: 1240px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="display: flex; flex-direction: column; line-height: 1.05; color: #161616">
+        <span style="font-weight: 800; font-size: 18px; letter-spacing: 0.18em">WREN AVENUE</span>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.32em; color: #6B6862">PHOTO STUDIO</span>
+      </a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 14px; font-weight: 600">
+        <a href="#portfolio" style="color: #3A3833">Portfolio</a>
+        <a href="#sessions" style="color: #3A3833">Sessions</a>
+        <a href="#studio" style="color: #3A3833">Studio rental</a>
+        <a href="#galleries" style="color: #3A3833">Client galleries</a>
+        <a href="#book" style="background: #161616; color: #FFFFFF; padding: 11px 18px; border-radius: 4px; min-height: 44px; display: inline-flex; align-items: center; letter-spacing: 0.04em">Book a session</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px 64px; width: 100%; display: flex; flex-wrap: wrap; align-items: stretch; gap: 48px">
+    <div style="flex: 1 1 440px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 24px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #B33F0E">Portraits · Brands · Weddings · Studio rental</p>
+      <h1 style="margin: 0; font-size: clamp(42px, 5.6vw, 76px); line-height: 1.0; font-weight: 800; letter-spacing: -0.035em">Photos that look like you on a good day.</h1>
+      <p style="margin: 0; font-size: 19px; line-height: 1.6; color: #4A4843; max-width: 500px">Relaxed, natural sessions in our South Orange studio or on location. Pick a package, pay a small retainer online, and get your edited gallery in two weeks.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px">
+        <a href="#book" style="background: #161616; color: #FFFFFF; padding: 15px 24px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; display: inline-flex; align-items: center; letter-spacing: 0.03em">Book a session</a>
+        <a href="#studio" style="border: 1.5px solid #161616; color: #161616; padding: 15px 24px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; display: inline-flex; align-items: center; letter-spacing: 0.03em">Rent the studio</a>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #6B6862">Booking now for winter and spring. Weekend dates go first.</p>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+      <img src="img/photo-hero.jpg" alt="Portrait of a woman seated by a window in soft light" style="grid-row: span 2; width: 100%; height: 100%; min-height: 520px; object-fit: cover; border-radius: 4px; display: block">
+      <img src="img/photo-brand.jpg" alt="Business owner smiling in front of a bookshelf" style="width: 100%; height: 253px; object-fit: cover; border-radius: 4px; display: block">
+      <img src="img/photo-wedding.jpg" alt="Newlyweds dancing under falling flower petals" style="width: 100%; height: 253px; object-fit: cover; border-radius: 4px; display: block">
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio" style="background: #FFFFFF; border-top: 1px solid #E2E0DB; border-bottom: 1px solid #E2E0DB">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-direction: column; gap: 32px">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6B6862">Portfolio</p>
+          <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Recent work</h2>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px" role="group" aria-label="Filter portfolio">
+          <sc-for list="{{filters}}" as="f" hint-placeholder-count="5">
+            <button type="button" onClick="{{f.pick}}" aria-pressed="{{f.pressed}}" style="font: inherit; padding: 10px 16px; border-radius: 999px; border: 1.5px solid {{f.border}}; background: {{f.bg}}; color: {{f.fg}}; font-weight: 700; font-size: 13px; min-height: 44px; cursor: pointer; letter-spacing: 0.02em">{{f.label}}</button>
+          </sc-for>
+        </div>
+      </div>
+      <div style="columns: 3 260px; column-gap: 16px">
+        <sc-for list="{{gallery}}" as="g" hint-placeholder-count="9">
+          <img src="{{g.src}}" alt="{{g.alt}}" style="break-inside: avoid; margin-bottom: 16px; width: 100%; height: {{g.h}}; object-fit: cover; border-radius: 4px; display: block; background: {{g.tone}}">
+        </sc-for>
+      </div>
+      <p style="margin: 0; font-size: 14px; color: #6B6862">More on <a href="https://instagram.com" style="font-weight: 700">Instagram</a>. Sample photos from Pexels stand in for the photographer's own work.</p>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section id="sessions" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <div style="max-width: 620px; display: flex; flex-direction: column; gap: 12px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6B6862">Sessions</p>
+      <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Clear packages, no surprise fees.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4843">Every session includes a prep guide, professional editing and a private online gallery to download and share.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+      <div style="padding: 28px; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6862">20 min</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Mini Session</h3>
+        <p style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em">$175</p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; color: #4A4843">
+          <li>10 edited images</li>
+          <li>Studio, one backdrop</li>
+          <li>Great for updates and seasonal photos</li>
+        </ul>
+        <p style="margin: auto 0 0; font-size: 13px; color: #6B6862; padding-top: 8px">$50 retainer to book</p>
+      </div>
+      <div style="padding: 28px; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6862">60 min</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Portrait Session</h3>
+        <p style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em">$350</p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; color: #4A4843">
+          <li>25 edited images</li>
+          <li>Studio or one outdoor location</li>
+          <li>Up to 2 outfit changes</li>
+        </ul>
+        <p style="margin: auto 0 0; font-size: 13px; color: #6B6862; padding-top: 8px">$100 retainer to book</p>
+      </div>
+      <div style="padding: 28px; background: #161616; color: #F7F7F5; border-radius: 6px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #D6D3CE">90 min · most booked</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Brand &amp; Headshots</h3>
+        <p style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em">$450</p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; color: #D6D3CE">
+          <li>40 edited images, commercial use</li>
+          <li>Headshots plus at-work shots</li>
+          <li>Add team members for $75 each</li>
+        </ul>
+        <p style="margin: auto 0 0; font-size: 13px; color: #D6D3CE; padding-top: 8px">$150 retainer to book</p>
+      </div>
+      <div style="padding: 28px; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; display: flex; flex-direction: column; gap: 12px">
+        <p style="margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #6B6862">Full day</p>
+        <h3 style="margin: 0; font-size: 22px; font-weight: 800">Weddings &amp; Events</h3>
+        <p style="margin: 0; font-size: 30px; font-weight: 800; letter-spacing: -0.02em">from $2,800</p>
+        <ul style="margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.7; color: #4A4843">
+          <li>6-10 hours of coverage</li>
+          <li>Second shooter available</li>
+          <li>Engagement session included</li>
+        </ul>
+        <a href="#inquire" style="margin: auto 0 0; padding-top: 8px; font-size: 14px; font-weight: 700">Check your date →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="background: #EFEDE8; border-top: 1px solid #E2E0DB; border-bottom: 1px solid #E2E0DB">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6B6862">Book online</p>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Pick a session and a date.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4843">The retainer holds your date and comes off your total. The balance is due on the day of your session.</p>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #3A3833">
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; background: #B33F0E; display: inline-block" aria-hidden="true"></span>Confirmation and prep guide by email</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; background: #B33F0E; display: inline-block" aria-hidden="true"></span>Text reminder 2 days before</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span style="width: 8px; height: 8px; background: #B33F0E; display: inline-block" aria-hidden="true"></span>Reschedule free up to 72 hours ahead</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 440px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 13px; font-weight: 700; color: #6B6862">1. Session</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{sessions}}" as="s" hint-placeholder-count="3">
+              <button type="button" onClick="{{s.pick}}" aria-pressed="{{s.pressed}}" style="font: inherit; padding: 12px 8px; border-radius: 4px; border: 1.5px solid {{s.border}}; background: {{s.bg}}; color: {{s.fg}}; font-weight: 700; font-size: 13px; min-height: 52px; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 2px"><span>{{s.name}}</span><span style="font-weight: 500; font-size: 12px">{{s.priceLabel}}</span></button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 13px; font-weight: 700; color: #6B6862">2. Date</p>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{dates}}" as="d" hint-placeholder-count="8">
+              <button type="button" onClick="{{d.pick}}" disabled="{{d.disabled}}" aria-pressed="{{d.pressed}}" style="font: inherit; padding: 10px 0; border-radius: 4px; border: 1px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}; font-weight: 600; font-size: 13px; min-height: 44px; cursor: pointer; text-decoration: {{d.strike}}">{{d.label}}</button>
+            </sc-for>
+          </div>
+          <p style="margin: 0; font-size: 12px; color: #6B6862">Crossed-out dates are already booked.</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 6px; padding: 16px; background: #F7F7F5; border-radius: 4px; font-size: 14px">
+          <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4A4843">{{summary}}</span><span style="font-weight: 700">{{total}}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4A4843">Retainer due today</span><span style="font-weight: 800; font-size: 18px">{{retainer}}</span></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4A4843">Balance on session day</span><span style="font-weight: 700">{{balance}}</span></div>
+        </div>
+        <button type="button" style="font: inherit; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Pay retainer &amp; book</button>
+        <p style="margin: 0; font-size: 12px; color: #6B6862; text-align: center">[Replace this block with the live booking and payment embed.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDIO RENTAL -->
+  <section id="studio" style="background: #161616; color: #F7F7F5">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #E8A27F">Studio rental</p>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Shoot in our space.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #D6D3CE">A 1,200 sq ft daylight studio for photographers, content creators and small brands. Book by the hour, pay online, and get a door code by text.</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; font-size: 14px; color: #D6D3CE">
+          <span>· Cyc wall and seamless backdrops</span>
+          <span>· Strobes and modifiers included</span>
+          <span>· Changing area with mirror</span>
+          <span>· Free parking, ground-floor load-in</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 8px">
+          <img src="img/studio-1.jpg" alt="Photo studio with a white backdrop and umbrella lights" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; display: block">
+          <img src="img/studio-2.jpg" alt="Softbox lights set up in a studio" style="width: 100%; height: 150px; object-fit: cover; border-radius: 4px; display: block">
+        </div>
+      </div>
+      <div style="flex: 1 1 380px; min-width: 0; background: #F7F7F5; color: #161616; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 20px; font-weight: 800">Reserve the studio</p>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{rentals}}" as="r" hint-placeholder-count="4">
+            <button type="button" onClick="{{r.pick}}" aria-pressed="{{r.pressed}}" style="font: inherit; padding: 12px; border-radius: 4px; border: 1.5px solid {{r.border}}; background: {{r.bg}}; color: {{r.fg}}; font-weight: 700; font-size: 14px; min-height: 56px; cursor: pointer; display: flex; flex-direction: column; align-items: flex-start; gap: 2px"><span>{{r.label}}</span><span style="font-weight: 500; font-size: 13px">{{r.priceLabel}}</span></button>
+          </sc-for>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 12px; border-top: 1px solid #E2E0DB; gap: 12px; flex-wrap: wrap">
+          <div>
+            <p style="margin: 0; font-size: 13px; color: #6B6862">{{rentalLabel}}</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 800">{{rentalPrice}}</p>
+          </div>
+          <button type="button" style="font: inherit; background: #B33F0E; color: #FFFFFF; border: 0; padding: 13px 20px; border-radius: 4px; font-weight: 700; font-size: 14px; min-height: 48px; cursor: pointer">Pick a time</button>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #6B6862">Paid in full at booking. Cancel 48 hours ahead for a full refund.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS + GALLERIES -->
+  <section id="galleries" style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 40px">
+    <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">After you book</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #161616; padding-top: 18px">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.18em; color: #B33F0E">01</span>
+        <h3 style="margin: 0; font-size: 19px; font-weight: 800">Prep guide</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">What to wear, what to bring, and how to relax in front of a camera, sent right after booking.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #161616; padding-top: 18px">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.18em; color: #B33F0E">02</span>
+        <h3 style="margin: 0; font-size: 19px; font-weight: 800">Your session</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Easy direction, no awkward posing. Most people say it went faster than they expected.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; border-top: 2px solid #161616; padding-top: 18px">
+        <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.18em; color: #B33F0E">03</span>
+        <h3 style="margin: 0; font-size: 19px; font-weight: 800">Private gallery in 2 weeks</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Download, share and order prints from your own online gallery.</p>
+        <a href="#galleries" style="font-weight: 700; font-size: 14px">Client gallery login →</a>
+      </div>
+    </div>
+    <blockquote style="margin: 8px 0 0; padding: 28px 32px; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; font-size: 20px; line-height: 1.55; font-weight: 600; letter-spacing: -0.01em">
+      "I hate being photographed, and this was actually fun. My new headshot is on my website, LinkedIn and business cards, and three clients have mentioned it."
+      <footer style="margin-top: 10px; font-size: 14px; font-weight: 500; color: #6B6862">— Sample review</footer>
+    </blockquote>
+  </section>
+
+  <!-- INQUIRY -->
+  <section id="inquire" style="background: #FFFFFF; border-top: 1px solid #E2E0DB">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: #6B6862">Weddings &amp; events</p>
+        <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Check your date.</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4843">Tell us about your day and we'll reply within 24 hours with availability and a custom quote. A signed contract and 30% retainer hold the date.</p>
+      </div>
+      <form style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" aria-label="Wedding and event inquiry">
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Names
+          <input type="text" name="names" placeholder="You and your partner" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Email
+          <input type="email" name="email" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Event date
+          <input type="date" name="date" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Venue or location
+          <input type="text" name="venue" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Type of event
+          <select name="type" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+            <option>Wedding</option>
+            <option>Engagement</option>
+            <option>Corporate event</option>
+            <option>Party or celebration</option>
+          </select>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Hours of coverage
+          <select name="hours" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
+            <option>Not sure yet</option>
+            <option>Up to 4 hours</option>
+            <option>6 hours</option>
+            <option>8-10 hours</option>
+          </select>
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; grid-column: 1 / -1">Tell us about it
+          <textarea name="notes" rows="3" placeholder="Guest count, style you love, must-have shots..." style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; resize: vertical; background: #FFFFFF"></textarea>
+        </label>
+        <button type="button" style="font: inherit; grid-column: 1 / -1; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Send inquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="max-width: 1240px; margin: 0 auto; padding: 72px 24px; width: 100%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px">
+    <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 800">What should I wear?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Solid colors and comfortable fits photograph best. Your prep guide has examples for each session type.</p></div>
+    <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 800">Can I get more images?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Yes. Extra edited images are $15 each, or buy the full gallery from your online proofing page.</p></div>
+    <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 800">What if it rains?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Outdoor sessions move to the studio or a new date at no charge. We'll text you the day before if the forecast looks bad.</p></div>
+    <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 800">Can I use the photos for my business?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Brand &amp; Headshot sessions include commercial use. Other sessions are for personal use; ask if you need more.</p></div>
+  </section>
+
+  <footer style="border-top: 1px solid #E2E0DB; background: #F7F7F5">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #6B6862">
+      <span style="font-weight: 800; letter-spacing: 0.18em; color: #161616">WREN AVENUE</span>
+      <span>South Orange, NJ · (973) 555-0163 · hello@wrenavenue.example</span>
+      <span>Site by <a href="index.html" style="font-weight: 700">Northline Studio</a> · Photos: Pexels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { filter: 'all', session: 1, date: 2, rental: 1 };
+  }
+  renderVals() {
+    const on = { border: '#161616', bg: '#161616', fg: '#FFFFFF' };
+    const off = { border: '#CFCAC2', bg: '#FFFFFF', fg: '#161616' };
+    const filterDefs = [
+      { id: 'all', label: 'All' },
+      { id: 'portraits', label: 'Portraits' },
+      { id: 'brand', label: 'Brand & headshots' },
+      { id: 'weddings', label: 'Weddings' },
+      { id: 'family', label: 'Family' }
+    ];
+    const photos = [
+      { alt: 'Close-up portrait in warm light', src: 'img/pg-portrait.jpg', cat: 'portraits', h: '250px', tone: '#D6D3CE' },
+      { alt: 'Smiling headshot against a light background', src: 'img/pg-headshot.jpg', cat: 'brand', h: '250px', tone: '#CFCAC2' },
+      { alt: 'Bride and groom embracing at their reception', src: 'img/pg-wedding.jpg', cat: 'weddings', h: '440px', tone: '#C4BEB4' },
+      { alt: 'Family with three kids sitting together in a park', src: 'img/pg-family.jpg', cat: 'family', h: '440px', tone: '#DCD8D1' },
+      { alt: 'Styled flat lay of a coffee cup and accessories', src: 'img/pg-brand.jpg', cat: 'brand', h: '400px', tone: '#BDB6AB' },
+      { alt: 'Outdoor portrait of a woman at golden hour', src: 'img/pg-studio.jpg', cat: 'portraits', h: '440px', tone: '#E2DED7' },
+      { alt: 'Black-and-white first dance under string lights', src: 'img/pg-dance.jpg', cat: 'weddings', h: '250px', tone: '#CBC5BB' },
+      { alt: 'Kids huddled together on a grassy field', src: 'img/pg-kids.jpg', cat: 'family', h: '250px', tone: '#D3CEC6' },
+      { alt: 'Team working together around a table', src: 'img/pg-team.jpg', cat: 'brand', h: '250px', tone: '#C9C3B9' }
+    ];
+    const f = this.state.filter;
+    const sessionDefs = [
+      { name: 'Mini', price: 175, retainer: 50 },
+      { name: 'Portrait', price: 350, retainer: 100 },
+      { name: 'Brand', price: 450, retainer: 150 }
+    ];
+    const dateNames = ['Sat 7', 'Sun 8', 'Tue 10', 'Wed 11', 'Thu 12', 'Sat 14', 'Sun 15', 'Tue 17'];
+    const booked = [0, 5];
+    const rentalDefs = [
+      { label: '1 hour', price: 45 },
+      { label: '2 hours', price: 85 },
+      { label: 'Half day (4 hrs)', price: 160 },
+      { label: 'Full day (8 hrs)', price: 300 }
+    ];
+    const s = sessionDefs[this.state.session];
+    const r = rentalDefs[this.state.rental];
+    const money = (n) => '$' + n.toLocaleString('en-US');
+    return {
+      filters: filterDefs.map((d) => ({
+        label: d.label,
+        pressed: d.id === f ? 'true' : 'false',
+        ...(d.id === f ? on : off),
+        pick: () => this.setState({ filter: d.id })
+      })),
+      gallery: f === 'all' ? photos : photos.filter((p) => p.cat === f),
+      sessions: sessionDefs.map((d, i) => ({
+        name: d.name,
+        priceLabel: money(d.price),
+        pressed: i === this.state.session ? 'true' : 'false',
+        ...(i === this.state.session ? on : off),
+        pick: () => this.setState({ session: i })
+      })),
+      dates: dateNames.map((label, i) => {
+        const isBooked = booked.indexOf(i) !== -1;
+        const sel = i === this.state.date;
+        return {
+          label,
+          disabled: isBooked,
+          strike: isBooked ? 'line-through' : 'none',
+          pressed: sel ? 'true' : 'false',
+          border: sel ? '#161616' : '#E2E0DB',
+          bg: sel ? '#161616' : (isBooked ? '#F1EFEB' : '#FFFFFF'),
+          fg: sel ? '#FFFFFF' : (isBooked ? '#8A867E' : '#161616'),
+          pick: () => { if (!isBooked) this.setState({ date: i }); }
+        };
+      }),
+      summary: s.name + ' session · ' + dateNames[this.state.date],
+      total: money(s.price),
+      retainer: money(s.retainer),
+      balance: money(s.price - s.retainer),
+      rentals: rentalDefs.map((d, i) => ({
+        label: d.label,
+        priceLabel: money(d.price),
+        pressed: i === this.state.rental ? 'true' : 'false',
+        border: i === this.state.rental ? '#B33F0E' : '#CFCAC2',
+        bg: i === this.state.rental ? '#FBEDE6' : '#FFFFFF',
+        fg: '#161616',
+        pick: () => this.setState({ rental: i })
+      })),
+      rentalLabel: 'Studio · ' + r.label,
+      rentalPrice: money(r.price)
+    };
+  }
+}
+</script>
+</body>
+</html>
