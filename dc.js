@@ -20,7 +20,7 @@
     return Object.assign({}, comp.props, v);
   }
 
-  function render(node, scope, reg) {
+  function render(node, scope, reg, ns) {
     if (node.nodeType === 3) {
       var t = document.createTextNode('');
       var raw = node.nodeValue;
@@ -42,11 +42,11 @@
           var as = node.getAttribute('as') || 'item';
           list.forEach(function (item, i) {
             var sc = Object.create(s); sc[as] = item; sc.index = i;
-            node.childNodes.forEach(function (c) { nodes = nodes.concat(render(c, sc, null)); });
+            node.childNodes.forEach(function (c) { nodes = nodes.concat(render(c, sc, null, ns)); });
           });
         } else {
           if (evalExpr(single(node.getAttribute('value')), s)) {
-            node.childNodes.forEach(function (c) { nodes = nodes.concat(render(c, s, null)); });
+            node.childNodes.forEach(function (c) { nodes = nodes.concat(render(c, s, null, ns)); });
           }
         }
         if (parent) {
@@ -60,7 +60,9 @@
       draw(scope); if (reg) reg.push(draw);
       return frag;
     }
-    var el = document.createElement(tag);
+    var SVGNS = 'http://www.w3.org/2000/svg';
+    if (tag === 'svg') ns = SVGNS;
+    var el = ns ? document.createElementNS(ns, node.localName) : document.createElement(tag);
     Array.prototype.forEach.call(node.attributes, function (a) {
       var name = a.name, v = a.value;
       if (v.indexOf('{{') < 0) { el.setAttribute(name, v); return; }
@@ -79,7 +81,7 @@
       };
       fn(scope); if (reg) reg.push(fn);
     });
-    node.childNodes.forEach(function (c) { render(c, scope, reg).forEach(function (x) { el.appendChild(x); }); });
+    node.childNodes.forEach(function (c) { render(c, scope, reg, ns).forEach(function (x) { el.appendChild(x); }); });
     return [el];
   }
 
