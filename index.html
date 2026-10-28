@@ -270,6 +270,64 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
       </div>
       <a href="#faq" style="font-weight: 600; font-size: 15px">What's included? →</a>
     </div>
+    <p style="margin: 0; font-size: 16px; color: #3D4570">Not sure it's worth it? <a href="#roi" style="font-weight: 600">Do the math with your own numbers →</a></p>
+  </section>
+
+  <!-- ROI CALCULATOR -->
+  <section id="roi" style="background: #1F2547; color: #FFFFFF">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 88px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #F2B632">Do the math</p>
+        <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Will a new website pay for itself?</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #DCCBB8">Put in your own numbers. It's a rough estimate, not a promise, but it shows what a few extra bookings a month are worth to you.</p>
+        <div data-roi-form style="display: grid; gap: 16px; margin-top: 8px">
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">Package
+            <select data-roi="pkg" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; background: #FFFFFF; color: #1F2547; min-height: 48px">
+              <option value="1500|17|0">Starter Site ($1,500)</option>
+              <option value="2400|29|1" selected>Booking Site ($2,400)</option>
+              <option value="3500|29|1">Full Service ($3,500)</option>
+            </select>
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">What a new client is worth to you per month ($)
+            <input data-roi="clientValue" type="number" inputmode="decimal" min="0" value="120" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">Extra new clients a month from the site
+            <input data-roi="newClients" type="number" inputmode="decimal" min="0" value="2" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">No-shows a month that reminders could save
+            <input data-roi="noShows" type="number" inputmode="decimal" min="0" value="3" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">Price of one session or appointment ($)
+            <input data-roi="sessionPrice" type="number" inputmode="decimal" min="0" value="50" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">Hours a month you'd stop spending on booking calls and DMs
+            <input data-roi="hours" type="number" inputmode="decimal" min="0" value="6" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">What an hour of your time is worth ($)
+            <input data-roi="hourValue" type="number" inputmode="decimal" min="0" value="30" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+          </label>
+        </div>
+      </div>
+      <div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; color: #1F2547; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px">
+        <div>
+          <p style="margin: 0; font-size: 14px; color: #666A86">Estimated value each month</p>
+          <p data-roi-out="monthly" style="margin: 4px 0 0; font-size: 44px; font-weight: 800; letter-spacing: -0.02em">$541</p>
+          <p data-roi-out="breakdown" style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4E5478">New clients $240 + saved no-shows $150 + time back $180, minus your Wix plan $29</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
+          <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
+            <p style="margin: 0; font-size: 13px; color: #666A86">Pays for itself in</p>
+            <p data-roi-out="payback" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">about 5 months</p>
+          </div>
+          <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
+            <p style="margin: 0; font-size: 13px; color: #666A86">First-year gain after the build</p>
+            <p data-roi-out="year" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">$4,092</p>
+          </div>
+        </div>
+        <p data-roi-out="note" style="margin: 0; font-size: 13px; line-height: 1.6; color: #666A86">Includes your own Wix plan (about $29/month for booking and payments). Card fees and the optional care plan aren't included.</p>
+        <a href="#book" style="background: {{accent}}; color: #FFFFFF; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none">Talk through my numbers on a free call</a>
+      </div>
+    </div>
   </section>
 
   <!-- FAQ -->
@@ -386,6 +444,38 @@ class Component extends DCLogic {
     };
   }
 }
+</script>
+<script>
+(function () {
+  function money(n) { return "$" + Math.round(n).toLocaleString("en-US"); }
+  function num(form, key) { var el = form.querySelector('[data-roi="' + key + '"]'); var v = el ? parseFloat(el.value) : 0; return isFinite(v) && v > 0 ? v : 0; }
+  function calc() {
+    var form = document.querySelector("[data-roi-form]");
+    if (!form) return;
+    var root = form.closest("section");
+    var pkg = (form.querySelector('[data-roi="pkg"]').value || "2400|29|1").split("|");
+    var price = +pkg[0], plan = +pkg[1], hasBooking = pkg[2] === "1";
+    var clients = num(form, "newClients") * num(form, "clientValue");
+    var noShows = hasBooking ? num(form, "noShows") * num(form, "sessionPrice") : 0;
+    var time = hasBooking ? num(form, "hours") * num(form, "hourValue") : 0;
+    var monthly = clients + noShows + time - plan;
+    var set = function (k, t) { var el = root.querySelector('[data-roi-out="' + k + '"]'); if (el) el.textContent = t; };
+    set("monthly", money(Math.max(monthly, 0)));
+    set("breakdown", "New clients " + money(clients) + (hasBooking ? " + saved no-shows " + money(noShows) + " + time back " + money(time) : "") + ", minus your Wix plan " + money(plan));
+    if (monthly <= 0) { set("payback", "Not on these numbers"); set("year", money(0)); }
+    else {
+      var months = Math.ceil(price / monthly);
+      set("payback", months <= 1 ? "about 1 month" : months > 36 ? "over 3 years" : "about " + months + " months");
+      set("year", money(Math.max(monthly * 12 - price, 0)));
+    }
+    set("note", hasBooking
+      ? "Includes your own Wix plan (about $29/month for booking and payments). Card fees and the optional care plan aren't included."
+      : "The Starter Site has no online booking or reminders, so only new clients are counted. Includes your own Wix plan (about $17/month).");
+  }
+  document.addEventListener("input", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
+  document.addEventListener("change", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
+  var tries = 0; (function wait() { if (document.querySelector("[data-roi-form]")) calc(); else if (tries++ < 50) setTimeout(wait, 100); })();
+})();
 </script>
 </body>
 </html>
