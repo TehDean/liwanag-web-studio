@@ -288,11 +288,15 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
               <option value="3500|29|1">Full Service ($3,500)</option>
             </select>
           </label>
-          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">What a new client is worth to you per month ($)
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">What a client pays you per month ($)
             <input data-roi="clientValue" type="number" inputmode="decimal" min="0" value="120" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
           </label>
+          <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">How many months a client usually stays
+            <input data-roi="stay" type="number" inputmode="decimal" min="1" value="3" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+            <span style="font-size: 13px; font-weight: 400; color: #DCCBB8">Use 1 for one-time sales, like a catering order or a single session.</span>
+          </label>
           <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">Extra new clients a month from the site
-            <input data-roi="newClients" type="number" inputmode="decimal" min="0" value="2" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
+            <input data-roi="newClients" type="number" inputmode="decimal" min="0" value="1" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
           </label>
           <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">No-shows a month that reminders could save
             <input data-roi="noShows" type="number" inputmode="decimal" min="0" value="3" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
@@ -310,9 +314,9 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
       </div>
       <div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; color: #1F2547; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px">
         <div>
-          <p style="margin: 0; font-size: 14px; color: #666A86">Estimated value each month</p>
-          <p data-roi-out="monthly" style="margin: 4px 0 0; font-size: 44px; font-weight: 800; letter-spacing: -0.02em">$541</p>
-          <p data-roi-out="breakdown" style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4E5478">New clients $240 + saved no-shows $150 + time back $180, minus your Wix plan $29</p>
+          <p style="margin: 0; font-size: 14px; color: #666A86">Estimated value each month, once it's up to speed</p>
+          <p data-roi-out="monthly" style="margin: 4px 0 0; font-size: 44px; font-weight: 800; letter-spacing: -0.02em">$661</p>
+          <p data-roi-out="breakdown" style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4E5478">About 3 extra paying clients at a time: $360 + saved no-shows $150 + time back $180, minus your Wix plan $29</p>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
           <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
@@ -321,7 +325,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           </div>
           <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
             <p style="margin: 0; font-size: 13px; color: #666A86">First-year gain after the build</p>
-            <p data-roi-out="year" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">$4,092</p>
+            <p data-roi-out="year" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">$5,172</p>
           </div>
         </div>
         <p data-roi-out="note" style="margin: 0; font-size: 13px; line-height: 1.6; color: #666A86">Includes your own Wix plan (about $29/month for booking and payments). Card fees and the optional care plan aren't included.</p>
@@ -455,22 +459,29 @@ class Component extends DCLogic {
     var root = form.closest("section");
     var pkg = (form.querySelector('[data-roi="pkg"]').value || "2400|29|1").split("|");
     var price = +pkg[0], plan = +pkg[1], hasBooking = pkg[2] === "1";
-    var clients = num(form, "newClients") * num(form, "clientValue");
+    var perMonth = num(form, "clientValue"), newPer = num(form, "newClients");
+    var stay = Math.max(1, Math.round(num(form, "stay") || 1));
     var noShows = hasBooking ? num(form, "noShows") * num(form, "sessionPrice") : 0;
     var time = hasBooking ? num(form, "hours") * num(form, "hourValue") : 0;
-    var monthly = clients + noShows + time - plan;
+    // Month m: clients who joined in the last `stay` months are still paying.
+    var clientsIn = function (m) { return newPer * Math.min(m, stay) * perMonth; };
+    var steadyClients = clientsIn(stay);
+    var steady = steadyClients + noShows + time - plan;
     var set = function (k, t) { var el = root.querySelector('[data-roi-out="' + k + '"]'); if (el) el.textContent = t; };
-    set("monthly", money(Math.max(monthly, 0)));
-    set("breakdown", "New clients " + money(clients) + (hasBooking ? " + saved no-shows " + money(noShows) + " + time back " + money(time) : "") + ", minus your Wix plan " + money(plan));
-    if (monthly <= 0) { set("payback", "Not on these numbers"); set("year", money(0)); }
-    else {
-      var months = Math.ceil(price / monthly);
-      set("payback", months <= 1 ? "about 1 month" : months > 36 ? "over 3 years" : "about " + months + " months");
-      set("year", money(Math.max(monthly * 12 - price, 0)));
+    set("monthly", money(Math.max(steady, 0)));
+    var active = Math.round(newPer * stay * 10) / 10;
+    set("breakdown", "About " + active + (active === 1 ? " extra paying client" : " extra paying clients") + " at a time: " + money(steadyClients) + (hasBooking ? " + saved no-shows " + money(noShows) + " + time back " + money(time) : "") + ", minus your Wix plan " + money(plan));
+    var cum = -price, payback = 0, year = 0;
+    for (var m = 1; m <= 60; m++) {
+      cum += clientsIn(m) + noShows + time - plan;
+      if (!payback && cum >= 0) payback = m;
+      if (m === 12) year = cum;
     }
-    set("note", hasBooking
-      ? "Includes your own Wix plan (about $29/month for booking and payments). Card fees and the optional care plan aren't included."
-      : "The Starter Site has no online booking or reminders, so only new clients are counted. Includes your own Wix plan (about $17/month).");
+    set("payback", !payback ? "Not on these numbers" : payback <= 1 ? "about 1 month" : payback > 36 ? "over 3 years" : "about " + payback + " months");
+    set("year", money(Math.max(year, 0)));
+    set("note", (hasBooking
+      ? "Counts each new client for as long as they usually stay, and includes your own Wix plan (about $29/month). Card fees and the optional care plan aren't included."
+      : "The Starter Site has no online booking or reminders, so only new clients are counted. Includes your own Wix plan (about $17/month)."));
   }
   document.addEventListener("input", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
   document.addEventListener("change", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
