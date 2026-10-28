@@ -329,25 +329,29 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           <label style="display: grid; gap: 6px; font-size: 15px; font-weight: 600">What an hour of your time is worth ($)
             <input data-roi="hourValue" type="number" inputmode="decimal" min="0" value="30" style="font: 16px Inter, system-ui, sans-serif; padding: 12px 14px; border-radius: 12px; border: 1px solid #3D4570; min-height: 48px">
           </label>
+          <label style="display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 600; cursor: pointer; min-height: 44px">
+            <input data-roi="care" type="checkbox" checked style="width: 22px; height: 22px; accent-color: #F2B632; flex: none">
+            Include the care plan ($125/month)
+          </label>
         </div>
       </div>
       <div style="flex: 1 1 380px; min-width: 0; background: #FFFFFF; color: #1F2547; border-radius: 20px; padding: 32px; display: flex; flex-direction: column; gap: 18px; position: sticky; top: 24px">
         <div>
           <p style="margin: 0; font-size: 14px; color: #666A86">Estimated value each month, once it's up to speed</p>
-          <p data-roi-out="monthly" style="margin: 4px 0 0; font-size: 44px; font-weight: 800; letter-spacing: -0.02em">$661</p>
-          <p data-roi-out="breakdown" style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4E5478">About 3 extra paying clients at a time: $360 + saved no-shows $150 + time back $180, minus your Wix plan $29</p>
+          <p data-roi-out="monthly" style="margin: 4px 0 0; font-size: 44px; font-weight: 800; letter-spacing: -0.02em">$536</p>
+          <p data-roi-out="breakdown" style="margin: 6px 0 0; font-size: 14px; line-height: 1.6; color: #4E5478">About 3 extra paying clients at a time: $360 + saved no-shows $150 + time back $180, minus your website platform plan $29 and care plan $125</p>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px">
           <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
             <p style="margin: 0; font-size: 13px; color: #666A86">Pays for itself in</p>
-            <p data-roi-out="payback" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">about 5 months</p>
+            <p data-roi-out="payback" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">about 6 months</p>
           </div>
           <div style="background: #F7EDE0; border-radius: 14px; padding: 16px">
             <p style="margin: 0; font-size: 13px; color: #666A86">First-year gain after the build</p>
-            <p data-roi-out="year" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">$5,172</p>
+            <p data-roi-out="year" style="margin: 4px 0 0; font-size: 24px; font-weight: 800">$3,672</p>
           </div>
         </div>
-        <p data-roi-out="note" style="margin: 0; font-size: 13px; line-height: 1.6; color: #666A86">Includes your own Wix plan (about $29/month for booking and payments). Card fees and the optional care plan aren't included.</p>
+        <p data-roi-out="note" style="margin: 0; font-size: 13px; line-height: 1.6; color: #666A86">Counts each new client for as long as they usually stay, and subtracts your own website platform plan (about $29/month) and the care plan. Card fees aren't included.</p>
         <a href="#book" style="background: {{accent}}; color: #FFFFFF; padding: 14px 22px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; text-decoration: none">Talk through my numbers on a free call</a>
       </div>
     </div>
@@ -485,22 +489,24 @@ class Component extends DCLogic {
     // Month m: clients who joined in the last `stay` months are still paying.
     var clientsIn = function (m) { return newPer * Math.min(m, stay) * perMonth; };
     var steadyClients = clientsIn(stay);
-    var steady = steadyClients + noShows + time - plan;
+    var careEl = form.querySelector('[data-roi="care"]');
+    var care = careEl && careEl.checked ? 125 : 0;
+    var steady = steadyClients + noShows + time - plan - care;
     var set = function (k, t) { var el = root.querySelector('[data-roi-out="' + k + '"]'); if (el) el.textContent = t; };
     set("monthly", money(Math.max(steady, 0)));
     var active = Math.round(newPer * stay * 10) / 10;
-    set("breakdown", "About " + active + (active === 1 ? " extra paying client" : " extra paying clients") + " at a time: " + money(steadyClients) + (hasBooking ? " + saved no-shows " + money(noShows) + " + time back " + money(time) : "") + ", minus your Wix plan " + money(plan));
+    set("breakdown", "About " + active + (active === 1 ? " extra paying client" : " extra paying clients") + " at a time: " + money(steadyClients) + (hasBooking ? " + saved no-shows " + money(noShows) + " + time back " + money(time) : "") + ", minus your website platform plan " + money(plan) + (care ? " and care plan " + money(care) : ""));
     var cum = -price, payback = 0, year = 0;
     for (var m = 1; m <= 60; m++) {
-      cum += clientsIn(m) + noShows + time - plan;
+      cum += clientsIn(m) + noShows + time - plan - care;
       if (!payback && cum >= 0) payback = m;
       if (m === 12) year = cum;
     }
     set("payback", !payback ? "Not on these numbers" : payback <= 1 ? "about 1 month" : payback > 36 ? "over 3 years" : "about " + payback + " months");
     set("year", money(Math.max(year, 0)));
     set("note", (hasBooking
-      ? "Counts each new client for as long as they usually stay, and includes your own Wix plan (about $29/month). Card fees and the optional care plan aren't included."
-      : "The Starter Site has no online booking or reminders, so only new clients are counted. Includes your own Wix plan (about $17/month)."));
+      ? "Counts each new client for as long as they usually stay, and subtracts your own website platform plan (about $29/month)" + (care ? " and the care plan" : "") + ". Card fees aren't included."
+      : "The Starter Site has no online booking or reminders, so only new clients are counted. Subtracts your own website platform plan (about $17/month)" + (care ? " and the care plan" : "") + "."));
   }
   document.addEventListener("input", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
   document.addEventListener("change", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
