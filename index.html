@@ -18,6 +18,16 @@ body{margin:0;font-family:Inter,system-ui,sans-serif;color:#1F2547;background:#F
 a{color:#B23A2B;text-decoration:none}a:hover{color:#8E2C20}
 h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;letter-spacing:-0.015em!important}
 *{box-sizing:border-box}
+@media (max-width: 640px){
+  .swipe{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px!important;margin:0 -24px;padding:18px 24px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .swipe::-webkit-scrollbar{display:none}
+  .swipe>*{flex:0 0 82%;scroll-snap-align:center;min-width:0}
+  .swipe-hint{display:block!important}
+  .swipe .thumb{height:140px!important}
+  .pkgs>*{padding:22px!important;gap:12px!important}
+  .pkgs>.featured{order:-1}
+  section > div[style*="padding: 88px"]{padding-top:56px!important;padding-bottom:56px!important}
+}
 </style>
 </helmet>
 <div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFDF8; color: #1F2547; font-family: Inter, system-ui, sans-serif">
@@ -161,9 +171,9 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
         </div>
         <p style="margin: 0; font-size: 14px; color: #C3C8E6">Demo businesses, real features</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
+      <div class="swipe" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px">
         <a href="trainer.html" style="display: flex; flex-direction: column; background: #2A3263; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #3D4570">
-          <div style="height: 200px; background: #163A3A; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+          <div class="thumb" style="height: 200px; background: #163A3A; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
             <img src="img/trainer-hero.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
             <span style="position: relative; background: #FFFFFF; color: #1F2547; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Ridge Fitness</span>
           </div>
@@ -174,7 +184,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           </div>
         </a>
         <a href="caterer.html" style="display: flex; flex-direction: column; background: #2A3263; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #3D4570">
-          <div style="height: 200px; background: #3F2A1E; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+          <div class="thumb" style="height: 200px; background: #3F2A1E; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
             <img src="img/cater-hero-1.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
             <span style="position: relative; background: #FFFFFF; color: #1F2547; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Maple &amp; Thyme</span>
           </div>
@@ -185,7 +195,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           </div>
         </a>
         <a href="realtor.html" style="display: flex; flex-direction: column; background: #2A3263; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #3D4570">
-          <div style="height: 200px; background: #1E2A44; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+          <div class="thumb" style="height: 200px; background: #1E2A44; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
             <img src="img/home-1.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
             <span style="position: relative; background: #FFFFFF; color: #1F2547; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Dana Reyes Homes</span>
           </div>
@@ -196,7 +206,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           </div>
         </a>
         <a href="photographer.html" style="display: flex; flex-direction: column; background: #2A3263; border-radius: 16px; overflow: hidden; color: #FFFFFF; border: 1px solid #3D4570">
-          <div style="height: 200px; background: #2A2824; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
+          <div class="thumb" style="height: 200px; background: #2A2824; display: flex; align-items: flex-end; padding: 20px; position: relative; overflow: hidden">
             <img src="img/photo-hero.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block">
             <span style="position: relative; background: #FFFFFF; color: #1F2547; font-weight: 800; font-size: 22px; padding: 8px 14px; border-radius: 10px">Wren Avenue</span>
           </div>
@@ -207,6 +217,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
           </div>
         </a>
       </div>
+      <p class="swipe-hint" style="display: none; margin: -24px 0 0; font-size: 14px; font-weight: 600; color: #F2B632">Swipe to see all 4 samples →</p>
     </div>
   </section>
 
@@ -216,7 +227,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
       <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Packages that fit your business.</h2>
       <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4E5478">Clear prices, no surprises. You pay half up front and half at launch, and you pay your website platform directly, so there are no hidden markups. Founding clients (limited spots): ask about launch pricing on your free call.</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch">
+    <div class="swipe pkgs" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; align-items: stretch">
       <div style="padding: 32px; border: 1px solid #EFE3D3; border-radius: 20px; display: flex; flex-direction: column; gap: 20px">
         <div>
           <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #666A86; text-transform: uppercase; letter-spacing: 0.08em">Starter Site</p>
@@ -231,7 +242,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
         </ul>
         <a href="#book" style="margin-top: auto; text-align: center; border: 2px solid #1F2547; color: #1F2547; padding: 12px 18px; border-radius: 999px; font-weight: 600; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Start here</a>
       </div>
-      <div style="padding: 32px; border: 2px solid {{accent}}; border-radius: 20px; display: flex; flex-direction: column; gap: 20px; position: relative; background: #FFFFFF">
+      <div class="featured" style="padding: 32px; border: 2px solid {{accent}}; border-radius: 20px; display: flex; flex-direction: column; gap: 20px; position: relative; background: #FFFFFF">
         <span style="position: absolute; top: -14px; left: 32px; background: {{accent}}; color: #FFFFFF; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 999px; letter-spacing: 0.06em; text-transform: uppercase">Most popular</span>
         <div>
           <p style="margin: 0 0 8px; font-size: 14px; font-weight: 600; color: #666A86; text-transform: uppercase; letter-spacing: 0.08em">Booking Site</p>
@@ -263,6 +274,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
         <a href="#book" style="margin-top: auto; text-align: center; border: 2px solid #1F2547; color: #1F2547; padding: 12px 18px; border-radius: 999px; font-weight: 600; min-height: 48px; display: inline-flex; align-items: center; justify-content: center">Let's talk</a>
       </div>
     </div>
+    <p class="swipe-hint" style="display: none; margin: -24px 0 0; font-size: 14px; font-weight: 600; color: #B23A2B">Swipe to see all 3 packages →</p>
     <div style="padding: 24px 28px; background: #FFF8EE; border: 1px solid #EFE3D3; border-radius: 16px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
       <div style="display: flex; flex-direction: column; gap: 4px">
         <p style="margin: 0; font-size: 18px; font-weight: 700">Optional monthly care plan: $125/month</p>
