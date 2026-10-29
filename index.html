@@ -440,38 +440,17 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
     </div>
   </footer>
 
-  <!-- CHAT ASSISTANT BUBBLE -->
-  <div style="position: fixed; right: 24px; bottom: 24px; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; z-index: 10">
-    <sc-if value="{{chatOpen}}" hint-placeholder-val="{{ false }}">
-      <div style="width: 300px; background: #FFFFFF; border: 1px solid #EFE3D3; border-radius: 16px; box-shadow: 0 16px 40px rgba(31, 37, 71, 0.16); overflow: hidden">
-        <div style="padding: 14px 16px; background: #1F2547; color: #FFFFFF; font-weight: 600; font-size: 14px">Ask about pricing, timelines or booking</div>
-        <div style="padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; font-size: 14px">
-          <div style="background: #F7EDE0; padding: 10px 12px; border-radius: 10px; color: #1F2547">Kumusta! I can answer quick questions about packages, timelines and what's included. For anything else, I'll pass you to a human.</div>
-          <div style="display: flex; flex-wrap: wrap; gap: 6px">
-            <span style="border: 1px solid #DCCBB8; border-radius: 999px; padding: 6px 10px; font-size: 13px">What does a site cost?</span>
-            <span style="border: 1px solid #DCCBB8; border-radius: 999px; padding: 6px 10px; font-size: 13px">How long does it take?</span>
-          </div>
-        </div>
-      </div>
-    </sc-if>
-    <button type="button" onClick="{{toggleChat}}" aria-label="Open chat assistant" style="width: 56px; height: 56px; border-radius: 50%; border: 0; background: {{accent}}; color: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 10px 30px rgba(31, 37, 71, 0.2)">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    </button>
-  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"studioName":{"editor":"text","default":"Liwanag Web Studio","section":"Brand"},"accent":{"editor":"color","default":"#B23A2B","options":["#B23A2B","#C2410C","#A16207","#B23A2B"],"section":"Brand"},"$preview":{"width":1440,"height":4200}}'>
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { chatOpen: false };
   }
   renderVals() {
     return {
       studioName: this.props.studioName ?? 'Liwanag Web Studio',
-      accent: this.props.accent ?? '#B23A2B',
-      chatOpen: this.state.chatOpen,
-      toggleChat: () => this.setState({ chatOpen: !this.state.chatOpen })
+      accent: this.props.accent ?? '#B23A2B'
     };
   }
 }
@@ -517,5 +496,13 @@ class Component extends DCLogic {
   var tries = 0; (function wait() { if (document.querySelector("[data-roi-form]")) calc(); else if (tries++ < 50) setTimeout(wait, 100); })();
 })();
 </script>
+<!-- Chat assistant (Liwanag's own chatbot: Claude Haiku via Supabase) -->
+<script src="chat-widget.js" defer
+  data-endpoint="https://xruvuhjamxrwsbcibvff.supabase.co/functions/v1/chat"
+  data-client="liwanag"
+  data-title="Ask about pricing, timelines or booking"
+  data-greeting="Kumusta! I can answer quick questions about packages, timelines and what's included. For anything else, I'll point you to a free call with a real person."
+  data-chips="What does a site cost?|How long does it take?|Which package fits me?"
+  data-accent="#B23A2B" data-dark="#1F2547" data-soft="#F7EDE0"></script>
 </body>
 </html>
