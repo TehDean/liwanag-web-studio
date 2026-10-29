@@ -64,18 +64,19 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
     </div>
 
     <!-- mock booking card -->
-    <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center; padding: 40px; background-color: #FFF8EC; background-image: radial-gradient(ellipse at center, rgba(242, 182, 50, 0.5) 0%, rgba(242, 182, 50, 0.15) 50%, rgba(242, 182, 50, 0) 72%), linear-gradient(rgba(178, 58, 43, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(178, 58, 43, 0.10) 1px, transparent 1px); background-size: 100% 100%, 26px 26px, 26px 26px; border-radius: 28px">
-      <div style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #EFE3D3; border-radius: 20px; box-shadow: 0 20px 50px rgba(31, 37, 71, 0.10); overflow: hidden">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 40px; background-color: #FFF8EC; background-image: radial-gradient(ellipse at center, rgba(242, 182, 50, 0.5) 0%, rgba(242, 182, 50, 0.15) 50%, rgba(242, 182, 50, 0) 72%), linear-gradient(rgba(178, 58, 43, 0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(178, 58, 43, 0.10) 1px, transparent 1px); background-size: 100% 100%, 26px 26px, 26px 26px; border-radius: 28px">
+      <p style="margin: 0; font-size: 13px; font-weight: 600; color: #1F2547; background: #FFFFFF; border: 1px solid #EFE3D3; border-radius: 999px; padding: 6px 14px">Example client site · <span data-hero="who">Personal trainer</span></p>
+      <div data-hero="card" style="width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #EFE3D3; border-radius: 20px; box-shadow: 0 20px 50px rgba(31, 37, 71, 0.10); overflow: hidden; transition: opacity .35s ease">
         <div style="padding: 14px 18px; border-bottom: 1px solid #EFE3D3; display: flex; align-items: center; gap: 8px">
           <span style="width: 10px; height: 10px; border-radius: 50%; background: #DCCBB8; display: inline-block" aria-hidden="true"></span>
           <span style="width: 10px; height: 10px; border-radius: 50%; background: #DCCBB8; display: inline-block" aria-hidden="true"></span>
           <span style="width: 10px; height: 10px; border-radius: 50%; background: #DCCBB8; display: inline-block" aria-hidden="true"></span>
-          <span style="margin-left: 8px; font-size: 13px; color: #666A86">yourclient.com/book</span>
+          <span data-hero="url" style="margin-left: 8px; font-size: 13px; color: #666A86">yourbusiness.com/book</span>
         </div>
         <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px">
           <div>
-            <p style="margin: 0 0 4px; font-size: 13px; color: #666A86">Book a session</p>
-            <p style="margin: 0; font-size: 20px; font-weight: 700">60-min Personal Training</p>
+            <p data-hero="kicker" style="margin: 0 0 4px; font-size: 13px; color: #666A86">Book a session</p>
+            <p data-hero="title" style="margin: 0; font-size: 20px; font-weight: 700">60-min Personal Training</p>
           </div>
           <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
             <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px; font-weight: 500">Mon 3</div>
@@ -84,20 +85,20 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
             <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px; font-weight: 500">Thu 6</div>
           </div>
           <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
-            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px">7:00 AM</div>
-            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 2px solid {{accent}}; color: {{accent}}; font-size: 14px; font-weight: 600">8:00 AM</div>
-            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px">5:30 PM</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px" data-hero="t1">7:00 AM</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 2px solid {{accent}}; color: {{accent}}; font-size: 14px; font-weight: 600" data-hero="t2">8:00 AM</div>
+            <div style="padding: 10px 0; text-align: center; border-radius: 10px; border: 1px solid #EFE3D3; font-size: 14px" data-hero="t3">5:30 PM</div>
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 8px; border-top: 1px solid #EFE3D3">
             <div>
-              <p style="margin: 0; font-size: 13px; color: #666A86">Deposit due today</p>
-              <p style="margin: 0; font-size: 18px; font-weight: 700">$25.00</p>
+              <p data-hero="dep" style="margin: 0; font-size: 13px; color: #666A86">Deposit due today</p>
+              <p data-hero="amt" style="margin: 0; font-size: 18px; font-weight: 700">$25.00</p>
             </div>
-            <span style="background: #1F2547; color: #FFFFFF; padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 14px">Confirm booking</span>
+            <span style="background: #1F2547; color: #FFFFFF; padding: 12px 18px; border-radius: 10px; font-weight: 600; font-size: 14px" data-hero="btn">Confirm booking</span>
           </div>
           <p style="margin: 0; font-size: 12px; color: #666A86; display: flex; align-items: center; gap: 6px">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#B23A2B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
-            Reminder text sent 24 hours before
+            <span data-hero="note">Reminder text sent 24 hours before</span>
           </p>
         </div>
       </div>
@@ -494,6 +495,29 @@ class Component extends DCLogic {
   document.addEventListener("input", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
   document.addEventListener("change", function (e) { if (e.target.closest && e.target.closest("[data-roi-form]")) calc(); });
   var tries = 0; (function wait() { if (document.querySelector("[data-roi-form]")) calc(); else if (tries++ < 50) setTimeout(wait, 100); })();
+})();
+</script>
+<script>
+// Hero example card: rotates through the kinds of businesses we build for
+(function () {
+  var EX = [
+    { who: "Personal trainer", url: "yourbusiness.com/book", kicker: "Book a session", title: "60-min Personal Training", t1: "7:00 AM", t2: "8:00 AM", t3: "5:30 PM", dep: "Deposit due today", amt: "$25.00", btn: "Confirm booking", note: "Reminder text sent 24 hours before" },
+    { who: "Caterer", url: "yourbusiness.com/order", kicker: "Reserve your event date", title: "Party catering for 40 guests", t1: "Noon", t2: "4:00 PM", t3: "6:30 PM", dep: "Date deposit", amt: "$150.00", btn: "Reserve date", note: "Menu choices emailed right away" },
+    { who: "Photographer", url: "yourbusiness.com/book", kicker: "Book a shoot", title: "Family photo session", t1: "9:00 AM", t2: "10:30 AM", t3: "4:00 PM", dep: "Session retainer", amt: "$75.00", btn: "Book session", note: "Reminder text sent 24 hours before" },
+    { who: "Hair stylist", url: "yourbusiness.com/book", kicker: "Book an appointment", title: "Cut & style, 45 min", t1: "10:00 AM", t2: "1:15 PM", t3: "6:00 PM", dep: "Deposit due today", amt: "$20.00", btn: "Book now", note: "Reminder text sent 24 hours before" }
+  ];
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var i = 0;
+  function show(ex) {
+    Object.keys(ex).forEach(function (k) { var el = document.querySelector('[data-hero="' + k + '"]'); if (el) el.textContent = ex[k]; });
+  }
+  setInterval(function () {
+    var card = document.querySelector('[data-hero="card"]');
+    if (!card || document.hidden) return;
+    i = (i + 1) % EX.length;
+    card.style.opacity = "0";
+    setTimeout(function () { show(EX[i]); card.style.opacity = "1"; }, 350);
+  }, 4000);
 })();
 </script>
 <!-- Chat assistant (Liwanag's own chatbot: Claude Haiku via Supabase) -->
