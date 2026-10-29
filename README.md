@@ -1,6 +1,6 @@
 # Liwanag Web Studio (preview)
 
-Landing page and four sample client sites (personal trainer, caterer, realtor, photographer) for a no-code website studio in West Orange, NJ.
+Landing page and six sample client sites (personal trainer, barbershop, caterer, dog groomer, music teacher, photographer; an older realtor sample, realtor.html, is kept but no longer linked) for a no-code website studio in West Orange, NJ.
 
 All businesses, prices and reviews on the sample sites are fictional. Photos are from Pexels.
 

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<title>Sudsy Paws Grooming sample site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Nunito,system-ui,sans-serif;color:#1E3A3A;background:#FFFCF5;-webkit-font-smoothing:antialiased}
+a{color:#0F7C7C;text-decoration:none}a:hover{color:#0B5E5E}
+*{box-sizing:border-box}
+h1,h2,h3,.fred{font-family:Fredoka,Nunito,sans-serif!important}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #FFFCF5; color: #1E3A3A; font-family: Nunito, system-ui, sans-serif">
+
+  <div style="background: #1E3A3A; color: #BFEDE6; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 700">Liwanag Web Studio</a> · demo business</div>
+
+  <header style="background: #FFFCF5; border-bottom: 1px solid #F0E6D2">
+    <nav style="max-width: 1160px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" class="fred" style="font-size: 26px; font-weight: 700; color: #1E3A3A; display: inline-flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 34px; height: 34px; border-radius: 50%; background: #FFC94D; display: inline-flex; align-items: center; justify-content: center; font-size: 18px">🐾</span>Sudsy Paws</a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 700">
+        <a href="#services" style="color: #3F5C5C">Services</a>
+        <a href="#plan" style="color: #3F5C5C">Groom plan</a>
+        <a href="#first" style="color: #3F5C5C">First visit</a>
+        <a href="#faq" style="color: #3F5C5C">FAQ</a>
+        <a href="#book" style="background: #0F7C7C; color: #FFFFFF; padding: 10px 18px; border-radius: 999px; min-height: 44px; display: inline-flex; align-items: center">Book a groom</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="background: radial-gradient(circle at 85% 20%, #FFE9A8 0, rgba(255,233,168,0) 40%), #E6F6F3">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #0F7C7C">Dog grooming · Maplewood, NJ</p>
+        <h1 style="margin: 0; font-size: clamp(42px, 6vw, 70px); line-height: 1.02; font-weight: 700">Clean, calm and very fluffy.</h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #3F5C5C; max-width: 520px">Gentle, one-dog-at-a-time grooming. Book online in a minute, get a text when your pup is ready for pickup.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#book" style="background: #0F7C7C; color: #FFFFFF; padding: 14px 26px; border-radius: 999px; font-weight: 800; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Book a groom</a>
+          <a href="#services" style="background: #FFFFFF; border: 2px solid #BFE3DD; color: #1E3A3A; padding: 14px 26px; border-radius: 999px; font-weight: 700; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Prices by size</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px">
+          <span style="background: #FFFFFF; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700">No cages, ever</span>
+          <span style="background: #FFFFFF; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700">Pickup text</span>
+          <span style="background: #FFFFFF; padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 700">Anxious dogs welcome</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 340px; min-width: 0; display: flex; justify-content: center">
+        <img src="img/groom-hero.jpg" alt="A groomer blow-drying a small terrier on a grooming table" style="width: 100%; max-width: 390px; aspect-ratio: 4 / 5; border-radius: 200px 200px 28px 28px; object-fit: cover; display: block; border: 8px solid #FFFFFF; box-shadow: 0 20px 50px rgba(15, 124, 124, 0.18)">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES BY SIZE -->
+  <section id="services" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 36px">
+    <div style="max-width: 640px; display: flex; flex-direction: column; gap: 10px">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 700; line-height: 1.1">Prices by size</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F5C5C">Pick your dog's size when you book and the price is set. Matted coats or extra-anxious pups may need a little more time; we'll always ask first.</p>
+    </div>
+    <div style="overflow-x: auto; border-radius: 20px; border: 1px solid #F0E6D2; background: #FFFFFF">
+      <table style="width: 100%; border-collapse: collapse; min-width: 520px; font-size: 16px">
+        <thead><tr style="background: #FFF4D6; text-align: left"><th style="padding: 16px 20px">Service</th><th style="padding: 16px 12px">Small<br><span style="font-weight: 600; font-size: 13px; color: #6B7F7F">under 20 lb</span></th><th style="padding: 16px 12px">Medium<br><span style="font-weight: 600; font-size: 13px; color: #6B7F7F">20–50 lb</span></th><th style="padding: 16px 12px">Large<br><span style="font-weight: 600; font-size: 13px; color: #6B7F7F">50 lb +</span></th></tr></thead>
+        <tbody>
+          <tr style="border-top: 1px solid #F0E6D2"><td style="padding: 16px 20px"><strong>Bath &amp; brush</strong><br><span style="font-size: 14px; color: #6B7F7F">Wash, blow-dry, brush-out, nails, ears</span></td><td style="padding: 16px 12px; font-weight: 800">$45</td><td style="padding: 16px 12px; font-weight: 800">$60</td><td style="padding: 16px 12px; font-weight: 800">$75</td></tr>
+          <tr style="border-top: 1px solid #F0E6D2"><td style="padding: 16px 20px"><strong>Full groom</strong><br><span style="font-size: 14px; color: #6B7F7F">Everything above plus haircut and style</span></td><td style="padding: 16px 12px; font-weight: 800">$65</td><td style="padding: 16px 12px; font-weight: 800">$85</td><td style="padding: 16px 12px; font-weight: 800">$105</td></tr>
+          <tr style="border-top: 1px solid #F0E6D2"><td style="padding: 16px 20px"><strong>Puppy intro</strong><br><span style="font-weight: 400; font-size: 14px; color: #6B7F7F">Short, happy first visit, under 6 months</span></td><td style="padding: 16px 12px; font-weight: 800" colspan="3">$35 any size</td></tr>
+          <tr style="border-top: 1px solid #F0E6D2"><td style="padding: 16px 20px"><strong>Nail trim</strong><br><span style="font-size: 14px; color: #6B7F7F">Walk-ins welcome Tue–Sat</span></td><td style="padding: 16px 12px; font-weight: 800" colspan="3">$15 any size</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PLAN -->
+  <section id="plan" style="background: #0F7C7C; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 40px">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 40px; font-weight: 700; line-height: 1.1">The every-6-weeks plan</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #D3F1EC; max-width: 520px">Pre-book a full groom every six weeks and save 10%. Your next visit is booked before you leave, and you get a reminder text two days ahead.</p>
+      </div>
+      <div style="flex: 0 1 320px; min-width: 0; background: #FFFFFF; color: #1E3A3A; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
+        <p class="fred" style="margin: 0; font-size: 44px; font-weight: 700; line-height: 1">10% off</p>
+        <p style="margin: 0; font-size: 15px; color: #3F5C5C">every full groom, any size</p>
+        <button type="button" style="font: inherit; border: 0; background: #FFC94D; color: #1E3A3A; padding: 13px; border-radius: 999px; font-weight: 800; min-height: 46px; cursor: pointer">Start the plan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIRST VISIT + REVIEW -->
+  <section id="first" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px; align-items: center">
+    <div style="flex: 1 1 340px; min-width: 0">
+      <img src="img/groom-puppy.jpg" alt="A wet, curly puppy just after a bath" style="width: 100%; aspect-ratio: 3 / 2; border-radius: 28px; object-fit: cover; display: block">
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 700; line-height: 1.1">First visit? Easy.</h2>
+      <ol style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.55; color: #3F5C5C">
+        <li>Book online and pick your dog's size.</li>
+        <li>Fill in a short form about your pup (temperament, allergies, the look you want) and upload the rabies certificate.</li>
+        <li>Drop off, and we text you when they're ready.</li>
+      </ol>
+      <blockquote style="margin: 6px 0 0; padding: 18px 22px; border-left: 4px solid #FFC94D; background: #FFFFFF; border-radius: 0 16px 16px 0; font-size: 16px; line-height: 1.6">
+        "Biscuit used to shake at the groomer. Here he gets the same groomer every time and actually wags at the door."
+        <footer style="margin-top: 8px; font-size: 14px; color: #6B7F7F">— Sample review</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="book" style="background: #E6F6F3">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 40px; font-weight: 700; line-height: 1.1">Book a groom</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #3F5C5C">Pick your dog's size, the service and a drop-off time. A $20 deposit holds the spot and comes off the bill.</p>
+        <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #3F5C5C">
+          <li style="display: flex; gap: 10px; align-items: center"><span aria-hidden="true">🐾</span>Reminder text the day before</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span aria-hidden="true">🐾</span>"Ready for pickup" text</li>
+          <li style="display: flex; gap: 10px; align-items: center"><span aria-hidden="true">🐾</span>Free changes up to 24 hours before</li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 16px 40px rgba(15, 124, 124, 0.12)">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 800; color: #6B7F7F">1. Your dog's size</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{sizes}}" as="z" hint-placeholder-count="3">
+              <button type="button" onClick="{{z.pick}}" style="font: inherit; padding: 9px 0; border-radius: 14px; border: 2px solid {{z.border}}; background: {{z.bg}}; color: {{z.fg}}; font-weight: 700; font-size: 14px; min-height: 44px; cursor: pointer">{{z.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 800; color: #6B7F7F">2. Service</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px">
+            <sc-for list="{{services}}" as="s" hint-placeholder-count="3">
+              <button type="button" onClick="{{s.pick}}" style="font: inherit; padding: 9px 14px; border-radius: 999px; border: 2px solid {{s.border}}; background: {{s.bg}}; color: {{s.fg}}; font-weight: 700; font-size: 14px; min-height: 44px; cursor: pointer">{{s.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 800; color: #6B7F7F">3. Drop-off</p>
+          <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{days}}" as="d" hint-placeholder-count="5">
+              <button type="button" onClick="{{d.pick}}" style="font: inherit; padding: 9px 0; border-radius: 14px; border: 1px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}; font-weight: 700; font-size: 14px; min-height: 44px; cursor: pointer">{{d.label}}</button>
+            </sc-for>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{times}}" as="t" hint-placeholder-count="4">
+              <button type="button" onClick="{{t.pick}}" style="font: inherit; padding: 9px 0; border-radius: 14px; border: 1px solid {{t.border}}; background: {{t.bg}}; color: {{t.fg}}; font-weight: 600; font-size: 14px; min-height: 44px; cursor: pointer">{{t.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid #F0E6D2; flex-wrap: wrap; gap: 12px">
+          <div>
+            <p style="margin: 0; font-size: 13px; color: #6B7F7F">{{summary}}</p>
+            <p style="margin: 0; font-size: 20px; font-weight: 800">{{price}} · $20 deposit today</p>
+          </div>
+          <button type="button" style="font: inherit; background: #0F7C7C; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 999px; font-weight: 800; font-size: 15px; min-height: 46px; cursor: pointer">Pay deposit &amp; book</button>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #6B7F7F; text-align: center">[Replace this block with the live booking embed.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px">
+    <div style="flex: 1 1 280px; min-width: 0">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 700; line-height: 1.1">Good questions</h2>
+    </div>
+    <div style="flex: 2 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+      <details style="background: #FFFFFF; border: 1px solid #F0E6D2; border-radius: 16px; padding: 18px 20px"><summary style="font-weight: 800; cursor: pointer">How long does a groom take?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #3F5C5C">Usually 1.5 to 3 hours depending on size and coat. We text you the moment your dog is ready.</p></details>
+      <details style="background: #FFFFFF; border: 1px solid #F0E6D2; border-radius: 16px; padding: 18px 20px"><summary style="font-weight: 800; cursor: pointer">What vaccines do you need?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #3F5C5C">A current rabies certificate. You can upload it right after booking.</p></details>
+      <details style="background: #FFFFFF; border: 1px solid #F0E6D2; border-radius: 16px; padding: 18px 20px"><summary style="font-weight: 800; cursor: pointer">My dog is nervous. Can you help?</summary><p style="margin: 12px 0 0; font-size: 15px; line-height: 1.6; color: #3F5C5C">Yes. Book the first slot of the day when it's quiet, and note it in the form. We go slow and take breaks.</p></details>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #F0E6D2">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #6B7F7F">
+      <span class="fred" style="font-weight: 700; color: #1E3A3A">🐾 Sudsy Paws Grooming</span>
+      <span>Maplewood, NJ · (973) 555-0188 · hello@sudsypaws.example</span>
+      <span>Site by <a href="index.html" style="font-weight: 700">Liwanag Web Studio</a> · Photos: Pexels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { size: 0, service: 1, day: 1, time: 0 };
+  }
+  renderVals() {
+    const sel = { border: '#0F7C7C', bg: '#0F7C7C', fg: '#FFFFFF' };
+    const off = { border: '#D6E9E5', bg: '#FFFFFF', fg: '#1E3A3A' };
+    const sizes = ['Small', 'Medium', 'Large'];
+    const svc = ['Bath & brush', 'Full groom', 'Puppy intro'];
+    const price = [[45, 60, 75], [65, 85, 105], [35, 35, 35]];
+    const dayNames = ['Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const timeNames = ['8:00', '9:30', '11:00', '1:00'];
+    const mk = (names, key) => names.map((label, i) => {
+      const on = this.state[key] === i;
+      return { label, ...(on ? sel : off), pick: () => this.setState({ [key]: i }) };
+    });
+    return {
+      sizes: mk(sizes, 'size'),
+      services: mk(svc, 'service'),
+      days: mk(dayNames, 'day'),
+      times: mk(timeNames, 'time'),
+      price: '$' + price[this.state.service][this.state.size],
+      summary: svc[this.state.service] + ' · ' + sizes[this.state.size] + ' dog · ' + dayNames[this.state.day] + ' ' + timeNames[this.state.time] + (this.state.time < 2 ? ' AM' : this.state.time === 2 ? ' AM' : ' PM')
+    };
+  }
+}
+</script>
+</body>
+</html>
