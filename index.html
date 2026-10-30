@@ -474,8 +474,8 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
       </span>
       <span>Websites with booking, payments and chat for businesses. Salamat po for visiting!</span>
       <span style="display: flex; gap: 20px">
-        <a href="#top" style="color: #666A86">Privacy</a>
-        <a href="#top" style="color: #666A86">Terms</a>
+        <a href="privacy.html" style="color: #666A86">Privacy</a>
+        <a href="terms.html" style="color: #666A86">Terms</a>
       </span>
     </div>
   </footer>
@@ -561,7 +561,7 @@ class Component extends DCLogic {
 })();
 </script>
 <!-- Chat assistant (Liwanag's own chatbot: Claude Haiku via Supabase) -->
-<script src="chat-widget.js" defer
+<script src="chat-widget.js" data-privacy="privacy.html" defer
   data-endpoint="https://xruvuhjamxrwsbcibvff.supabase.co/functions/v1/chat"
   data-client="liwanag"
   data-title="Ask about pricing, timelines or booking"

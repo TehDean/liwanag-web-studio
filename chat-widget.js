@@ -72,6 +72,10 @@
     "</div>";
 
   var panel = root.querySelector(".panel"), log = root.querySelector(".log");
+  if (cfg.privacy && /^(https?:\/\/|[\w.\/-]+$)/.test(cfg.privacy)) {
+    var pl = document.createElement("a"); pl.href = cfg.privacy; pl.target = "_blank"; pl.rel = "noopener"; pl.textContent = "Privacy";
+    pl.style.color = "inherit"; var nt = root.querySelector(".note"); nt.appendChild(document.createTextNode(" ")); nt.appendChild(pl);
+  }
   var form = root.querySelector("form"), input = root.querySelector("input"), send = root.querySelector(".send");
   root.querySelector(".title").textContent = cfg.title || "Questions? Ask here";
 
