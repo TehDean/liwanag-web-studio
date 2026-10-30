@@ -449,7 +449,7 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
     <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
       <h2 style="margin: 0; font-size: 36px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1">Tara, let's talk. Book a free 20-minute call.</h2>
       <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4E5478">No pitch, no pressure. We'll look at how you take bookings today and tell you honestly whether a new site would help.</p>
-      <p style="margin: 0; font-size: 15px; color: #666A86">Prefer email? <a href="mailto:hello@example.com" style="font-weight: 600">hello@[yourdomain].com</a></p>
+      <p style="margin: 0; font-size: 15px; color: #666A86">Prefer email? <a href="mailto:liwanagweb@gmail.com" style="font-weight: 600">liwanagweb@gmail.com</a></p>
     </div>
     <form style="flex: 1 1 400px; min-width: 0; display: flex; flex-direction: column; gap: 14px; padding: 28px; border: 1px solid #EFE3D3; border-radius: 20px; background: #FFFFFF" aria-label="Book a call">
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
@@ -472,8 +472,8 @@ h1,h2{font-family:Fraunces,Georgia,serif!important;font-weight:600!important;let
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">How do you take bookings or orders today?
         <textarea name="notes" rows="3" placeholder="Texts, DMs, phone calls, an app..." style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #DCCBB8; border-radius: 10px; resize: vertical"></textarea>
       </label>
-      <button type="button" style="font: inherit; background: {{accent}}; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Request my free call</button>
-      <p style="margin: 0; font-size: 13px; color: #666A86; text-align: center">We reply within one business day. [Replace this form with your scheduling embed.]</p>
+      <button type="button" onclick="var f=this.form; var n=f.elements['name'].value.trim(), e=f.elements['email'].value.trim(), t=f.elements['type'].value, m=f.elements['notes'].value.trim(); var body='Name: '+n+'\nEmail: '+e+'\nWhat I do: '+t+'\nHow I take bookings or orders today: '+m; window.location.href='mailto:liwanagweb@gmail.com?subject='+encodeURIComponent('Free 20-minute call request'+(n?' from '+n:''))+'&body='+encodeURIComponent(body);" style="font: inherit; background: {{accent}}; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 999px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Request my free call</button>
+      <p style="margin: 0; font-size: 13px; color: #666A86; text-align: center">Opens your email app with your answers filled in. We reply within one business day.</p>
     </form>
   </section>
 
