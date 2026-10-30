@@ -28,6 +28,7 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
       <a href="#top" style="font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 24px; color: #2A1D14; letter-spacing: -0.01em">Maple &amp; Thyme</a>
       <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 500">
         <a href="#menus" style="color: #4A3A2E">Menus</a>
+        <a href="#bakery" style="color: #4A3A2E">Order treats</a>
         <a href="#how" style="color: #4A3A2E">How it works</a>
         <a href="#gallery" style="color: #4A3A2E">Gallery</a>
         <a href="#faq" style="color: #4A3A2E">FAQ</a>
@@ -70,7 +71,7 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
           </sc-for>
         </div>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 20px">
         <sc-for list="{{menuItems}}" as="it" hint-placeholder-count="6">
           <div style="padding: 22px 24px; border: 1px solid #EADFD2; border-radius: 16px; background: #FFFCF7; display: flex; flex-direction: column; gap: 6px">
             <div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline">
@@ -83,6 +84,60 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
         </sc-for>
       </div>
       <p style="margin: 0; font-size: 14px; color: #7A6657">Prices are per person unless noted. Staffing, rentals and delivery quoted separately.</p>
+    </div>
+  </section>
+
+  <!-- BAKERY ORDERS -->
+  <section id="bakery" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start">
+    <div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <p style="margin: 0; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #9A4A1E">Order online · pickup in Montclair</p>
+      <h2 style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 40px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1">The bakery shelf</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #5C4A3C">No event needed. Pick your treats, choose a pickup day and pay online. Orders close at 6 PM two days before pickup.</p>
+      <p style="margin: 0; font-size: 14px; color: #7A6657">Sold out items disappear on their own, and you get a text when your order is ready.</p>
+    </div>
+    <div style="flex: 2 1 460px; min-width: 0; background: #FFFFFF; border: 1px solid #EADFD2; border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+      <sc-if value="{{!ordered}}">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <sc-for list="{{bakeItems}}" as="b" hint-placeholder-count="5">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F1E8DD">
+              <div style="min-width: 0">
+                <p style="margin: 0; font-weight: 600; font-size: 16px">{{b.name}}</p>
+                <p style="margin: 0; font-size: 13px; color: #7A6657">{{b.desc}} · <strong style="color: #9A4A1E">{{b.price}}</strong></p>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px; flex: none">
+                <button type="button" onClick="{{b.minus}}" aria-label="One less {{b.name}}" style="font: inherit; width: 40px; height: 40px; border-radius: 50%; border: 1px solid #D9CCBD; background: #FFFCF7; color: #2A1D14; font-size: 20px; cursor: pointer">−</button>
+                <span style="min-width: 18px; text-align: center; font-weight: 700">{{b.qty}}</span>
+                <button type="button" onClick="{{b.plus}}" aria-label="One more {{b.name}}" style="font: inherit; width: 40px; height: 40px; border-radius: 50%; border: 0; background: #9A4A1E; color: #FFFFFF; font-size: 20px; cursor: pointer">+</button>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 14px; font-weight: 700; color: #7A6657">Pickup day</p>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+            <sc-for list="{{pickupDays}}" as="d" hint-placeholder-count="3">
+              <button type="button" onClick="{{d.pick}}" style="font: inherit; padding: 10px 4px; border-radius: 12px; border: 1px solid {{d.border}}; background: {{d.bg}}; color: {{d.fg}}; font-weight: 600; font-size: 14px; min-height: 44px; cursor: pointer">{{d.label}}</button>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 14px; border-top: 1px solid #EADFD2">
+          <div>
+            <p style="margin: 0; font-size: 13px; color: #7A6657">{{orderSummary}}</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 700">Total {{orderTotal}}</p>
+          </div>
+          <button type="button" onClick="{{placeOrder}}" style="font: inherit; background: {{orderBtnBg}}; color: #FFFFFF; border: 0; padding: 13px 22px; border-radius: 12px; font-weight: 600; font-size: 15px; min-height: 48px; cursor: pointer">Pay &amp; place order</button>
+        </div>
+        <p style="margin: 0; font-size: 12px; color: #7A6657; text-align: center">{{orderHint}}</p>
+      </sc-if>
+      <sc-if value="{{ordered}}">
+        <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 28px 8px">
+          <p style="margin: 0; font-size: 40px" aria-hidden="true">🥧</p>
+          <p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 26px; font-weight: 600">Order placed!</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5C4A3C">{{orderSummary}} · {{orderTotal}} paid. A receipt is on its way, and we'll text you when it's ready.</p>
+          <p style="margin: 4px 0 0; font-size: 12px; color: #7A6657">(Sample site: no payment was taken.)</p>
+          <button type="button" onClick="{{resetOrder}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #D9CCBD; color: #2A1D14; padding: 10px 18px; border-radius: 12px; font-weight: 600; min-height: 44px; cursor: pointer">Start a new order</button>
+        </div>
+      </sc-if>
     </div>
   </section>
 
@@ -176,9 +231,9 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
 
   <!-- FAQ -->
   <section id="faq" style="background: #FFFFFF; border-top: 1px solid #EADFD2">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px">
       <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">Do you handle allergies and dietary needs?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Yes. Tell us in the request and every menu is adjusted. Nut-free, gluten-free and vegan options are always available.</p></div>
-      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">What's the minimum order?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">$350 or 10 guests, whichever is more. Smaller orders may be possible for pickup.</p></div>
+      <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">What's the minimum order?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">$350 or 10 guests for catering, whichever is more. The bakery shelf has no minimum: order online for pickup.</p></div>
       <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">How far do you deliver?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Within 20 miles of Montclair is included. Beyond that, a delivery fee is quoted up front.</p></div>
       <div><h3 style="margin: 0 0 8px; font-size: 17px; font-weight: 700">What if I need to cancel?</h3><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #5C4A3C">Deposits are refundable up to 14 days before the event, and transferable to a new date after that.</p></div>
     </div>
@@ -197,7 +252,7 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { tab: 0 };
+    this.state = { tab: 0, qty: [1, 0, 1, 0, 0], day: 1, ordered: false };
   }
   renderVals() {
     const tabs = ['Weddings & parties', 'Office lunches', 'Desserts & baking'];
@@ -222,7 +277,28 @@ class Component extends DCLogic {
       ]
     ];
     const t = this.state.tab;
+    const bake = [
+      { name: 'Cookie box', desc: 'A dozen assorted', price: 28 },
+      { name: 'Brown-butter brownies', desc: 'Box of 6', price: 18 },
+      { name: 'Apple crumb pie', desc: 'Whole 9-inch pie', price: 32 },
+      { name: 'Pumpkin pie', desc: 'Whole 9-inch pie', price: 32 },
+      { name: 'Morning pastry box', desc: '8 scones and muffins', price: 30 }
+    ];
+    const days = ['Thursday', 'Friday', 'Saturday'];
+    const q = this.state.qty;
+    const setQ = (i, d) => { const n = q.slice(); n[i] = Math.max(0, Math.min(9, n[i] + d)); this.setState({ qty: n }); };
+    const count = q.reduce((a, b) => a + b, 0);
+    const total = bake.reduce((sum, b, i) => sum + b.price * q[i], 0);
     return {
+      bakeItems: bake.map((b, i) => ({ name: b.name, desc: b.desc, price: '$' + b.price, qty: q[i], minus: () => setQ(i, -1), plus: () => setQ(i, 1) })),
+      pickupDays: days.map((label, i) => ({ label, border: i === this.state.day ? '#9A4A1E' : '#D9CCBD', bg: i === this.state.day ? '#9A4A1E' : '#FFFFFF', fg: i === this.state.day ? '#FFFFFF' : '#2A1D14', pick: () => this.setState({ day: i }) })),
+      orderSummary: count + (count === 1 ? ' item' : ' items') + ' · pickup ' + days[this.state.day],
+      orderTotal: '$' + total,
+      orderBtnBg: count ? '#9A4A1E' : '#C9B8A6',
+      orderHint: count ? 'Secure card payment. Changes up to 48 hours before pickup.' : 'Add at least one item to order.',
+      ordered: this.state.ordered,
+      placeOrder: () => { if (count) this.setState({ ordered: true }); },
+      resetOrder: () => this.setState({ ordered: false, qty: [0, 0, 0, 0, 0] }),
       menuTabs: tabs.map((label, i) => ({
         label,
         border: i === t ? '#9A4A1E' : '#D9CCBD',
