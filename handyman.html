@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<title>Steady Hand Home Repair sample site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>x-dc{display:none}</style>
+<script src="dc.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Archivo,system-ui,sans-serif;color:#1C2B22;background:#F6F3EC;-webkit-font-smoothing:antialiased}
+a{color:#1F5A3A;text-decoration:none}a:hover{color:#16432B}
+*{box-sizing:border-box}
+input,select,textarea{font:inherit;font-weight:400;padding:12px 14px;border:1px solid #D5CDBD;border-radius:8px;min-height:46px;background:#FFFFFF;color:#1C2B22;width:100%}
+label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
+</style>
+</helmet>
+<div style="width: 100%; min-height: 100%; display: flex; flex-direction: column; background: #F6F3EC; color: #1C2B22; font-family: Archivo, system-ui, sans-serif">
+
+  <div style="background: #1C2B22; color: #CFE3D5; font-size: 13px; text-align: center; padding: 8px 16px">Sample site built by <a href="index.html" style="color: #FFFFFF; font-weight: 700">Liwanag Web Studio</a> · demo business · Starter Site example</div>
+
+  <header style="background: #F6F3EC; border-bottom: 1px solid #E3DCCD">
+    <nav style="max-width: 1160px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px" aria-label="Main">
+      <a href="#top" style="font-size: 22px; font-weight: 900; color: #1C2B22; display: inline-flex; align-items: center; gap: 10px; letter-spacing: -0.01em"><span aria-hidden="true" style="width: 34px; height: 34px; border-radius: 8px; background: #E8A33D; color: #1C2B22; display: inline-flex; align-items: center; justify-content: center; font-size: 18px">🔧</span>Steady Hand</a>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 22px; font-size: 15px; font-weight: 600">
+        <a href="#services" style="color: #3F5247">Services</a>
+        <a href="#work" style="color: #3F5247">Recent work</a>
+        <a href="#about" style="color: #3F5247">About</a>
+        <a href="#estimate" style="background: #1F5A3A; color: #FFFFFF; padding: 10px 18px; border-radius: 8px; min-height: 44px; display: inline-flex; align-items: center">Free estimate</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" style="background: #1F5A3A; color: #FFFFFF">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
+      <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+        <p style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A33D">Handyman &amp; home repair · Verona, NJ</p>
+        <h1 style="margin: 0; font-size: clamp(40px, 6vw, 66px); line-height: 1.02; font-weight: 900; letter-spacing: -0.02em">The small jobs, done right the first time.</h1>
+        <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #D6E7DC; max-width: 520px">Leaky faucets, running toilets, drywall patches, shelves, doors that stick. Send a photo of the job and get a free estimate within one business day.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px">
+          <a href="#estimate" style="background: #E8A33D; color: #1C2B22; padding: 14px 26px; border-radius: 8px; font-weight: 800; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Get a free estimate</a>
+          <a href="tel:+19735550152" style="background: transparent; border: 2px solid #6E9C80; color: #FFFFFF; padding: 14px 26px; border-radius: 8px; font-weight: 700; font-size: 16px; min-height: 48px; display: inline-flex; align-items: center">Call (973) 555-0152</a>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; padding-top: 4px">
+          <span style="background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600">NJ registered &amp; insured</span>
+          <span style="background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600">★ 4.9 on Google</span>
+          <span style="background: rgba(255,255,255,0.1); padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600">No job too small</span>
+        </div>
+      </div>
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; justify-content: center">
+        <img src="img/handy-hero.jpg" alt="A handyman in safety glasses drilling into a wooden board" style="width: 100%; max-width: 380px; aspect-ratio: 4 / 5; border-radius: 16px; object-fit: cover; display: block; box-shadow: 14px 14px 0 #E8A33D">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-direction: column; gap: 36px">
+    <div style="max-width: 640px; display: flex; flex-direction: column; gap: 10px">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em">What we fix</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A5B50">One visit, one fair price. Every job gets a written estimate before any work starts, so there are no surprises.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px">
+      <sc-for list="{{services}}" as="s" hint-placeholder-count="6">
+        <div style="background: #FFFFFF; border: 1px solid #E3DCCD; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 8px">
+          <p style="margin: 0; font-size: 28px" aria-hidden="true">{{s.icon}}</p>
+          <h3 style="margin: 0; font-size: 19px; font-weight: 800">{{s.name}}</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.55; color: #4A5B50">{{s.desc}}</p>
+          <p style="margin: 4px 0 0; font-size: 14px; font-weight: 700; color: #1F5A3A">{{s.price}}</p>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin: 0; font-size: 14px; color: #6A786F">Serving Verona, Cedar Grove, Caldwell, Montclair, West Orange and Essex Fells. Bigger projects (kitchens, baths, new plumbing or gas lines) we'll gladly refer to someone we trust.</p>
+  </section>
+
+  <!-- RECENT WORK -->
+  <section id="work" style="background: #FFFFFF; border-top: 1px solid #E3DCCD; border-bottom: 1px solid #E3DCCD">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 32px">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em">Recent jobs</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px">
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+          <img src="img/handy-plumb.jpg" alt="Hands tightening a pipe fitting under a sink" style="width: 100%; aspect-ratio: 3 / 2; border-radius: 12px; object-fit: cover; display: block">
+          <figcaption style="font-size: 15px; line-height: 1.5"><strong>New shut-off valve, Cedar Grove.</strong> <span style="color: #4A5B50">Old valve wouldn't close. Swapped in about an hour.</span></figcaption>
+        </figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+          <img src="img/handy-drywall.jpg" alt="A gloved hand smoothing joint compound on a wall" style="width: 100%; aspect-ratio: 3 / 2; border-radius: 12px; object-fit: cover; object-position: center 30%; display: block">
+          <figcaption style="font-size: 15px; line-height: 1.5"><strong>Drywall patch, Montclair.</strong> <span style="color: #4A5B50">Doorknob hole patched, sanded and ready to paint.</span></figcaption>
+        </figure>
+        <figure style="margin: 0; display: flex; flex-direction: column; gap: 10px">
+          <img src="img/handy-paint.jpg" alt="A worker painting a wall with a long roller" style="width: 100%; aspect-ratio: 3 / 2; border-radius: 12px; object-fit: cover; display: block">
+          <figcaption style="font-size: 15px; line-height: 1.5"><strong>Basement touch-up, Verona.</strong> <span style="color: #4A5B50">Two walls primed and painted before a home sale.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT + REVIEWS -->
+  <section id="about" style="max-width: 1160px; margin: 0 auto; padding: 88px 24px; width: 100%; display: flex; flex-wrap: wrap; gap: 48px">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 40px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em">Hi, I'm Ray.</h2>
+      <p style="margin: 0; font-size: 17px; line-height: 1.65; color: #4A5B50">I've been fixing things around Essex County for 15 years. I show up when I say I will, I clean up after myself, and I'll tell you honestly if a job isn't worth doing. Most jobs are done in a single visit.</p>
+      <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px">
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8A33D; font-weight: 900">✓</span>Written estimate before any work</li>
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8A33D; font-weight: 900">✓</span>90-day guarantee on my work</li>
+        <li style="display: flex; gap: 10px"><span aria-hidden="true" style="color: #E8A33D; font-weight: 900">✓</span>Pay by card, Zelle or check when the job's done</li>
+      </ul>
+    </div>
+    <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+      <blockquote style="margin: 0; padding: 20px 22px; background: #FFFFFF; border: 1px solid #E3DCCD; border-left: 4px solid #E8A33D; border-radius: 12px; font-size: 16px; line-height: 1.6">
+        "Sent a photo of our running toilet on Monday, Ray fixed it Tuesday morning. Fair price and he explained exactly what was wrong."
+        <footer style="margin-top: 8px; font-size: 14px; color: #6A786F">★★★★★ · Sample review</footer>
+      </blockquote>
+      <blockquote style="margin: 0; padding: 20px 22px; background: #FFFFFF; border: 1px solid #E3DCCD; border-left: 4px solid #E8A33D; border-radius: 12px; font-size: 16px; line-height: 1.6">
+        "Hung three shelves, fixed a sticking door and patched the hallway in one afternoon. Will call again."
+        <footer style="margin-top: 8px; font-size: 14px; color: #6A786F">★★★★★ · Sample review</footer>
+      </blockquote>
+      <a href="https://google.com" target="_blank" rel="noopener" style="font-weight: 700; font-size: 15px">Read more reviews on Google →</a>
+    </div>
+  </section>
+
+  <!-- ESTIMATE FORM -->
+  <section id="estimate" style="background: #EDE7DA">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+        <h2 style="margin: 0; font-size: 40px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em">Get a free estimate</h2>
+        <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A5B50">Tell me what needs fixing and add a photo if you can. I'll reply within one business day with a price and a few times I can come by.</p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6">Rather talk? <a href="tel:+19735550152" style="font-weight: 800">(973) 555-0152</a><br><span style="color: #6A786F; font-size: 14px">Mon–Sat, 8 AM–6 PM</span></p>
+      </div>
+      <form style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 16px 40px rgba(28, 43, 34, 0.1)" aria-label="Request a free estimate" onsubmit="return false">
+        <sc-if value="{{!sent}}">
+          <label>Your name<input type="text" name="name" placeholder="First and last name"></label>
+          <label>Phone or email<input type="text" name="contact" placeholder="So I can send your estimate"></label>
+          <label>Town<select name="town"><option>Verona</option><option>Cedar Grove</option><option>Caldwell</option><option>Montclair</option><option>West Orange</option><option>Essex Fells</option><option>Somewhere else</option></select></label>
+          <label>What needs fixing?<textarea name="job" rows="3" placeholder="e.g. Kitchen faucet drips, and the bathroom door won't close" style="resize: vertical"></textarea></label>
+          <label>Add a photo (optional)<input type="file" name="photo" accept="image/*" style="padding: 10px"></label>
+          <button type="button" onClick="{{send}}" style="font: inherit; background: #1F5A3A; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 8px; font-weight: 800; font-size: 16px; min-height: 48px; cursor: pointer">Send my request</button>
+          <p style="margin: 0; font-size: 12px; color: #6A786F; text-align: center">Your details go only to Steady Hand. No spam, ever.</p>
+        </sc-if>
+        <sc-if value="{{sent}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">👍</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 900">Got it, thanks!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A5B50">Ray will reply within one business day with a price and a few times he can come by.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6A786F">(Sample site: nothing was actually sent.)</p>
+          </div>
+        </sc-if>
+      </form>
+    </div>
+  </section>
+
+  <footer style="border-top: 1px solid #E3DCCD">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #6A786F">
+      <span style="font-weight: 900; color: #1C2B22">🔧 Steady Hand Home Repair</span>
+      <span>Verona, NJ · (973) 555-0152 · ray@steadyhand.example</span>
+      <span>Site by <a href="index.html" style="font-weight: 700">Liwanag Web Studio</a> · Photos: Pexels</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { sent: false };
+  }
+  renderVals() {
+    return {
+      sent: this.state.sent,
+      send: () => this.setState({ sent: true }),
+      services: [
+        { icon: '🚰', name: 'Faucets & toilets', desc: 'Drips, running toilets, new faucets, shut-off valves, clogged drains.', price: 'Most jobs $125–$250' },
+        { icon: '🧱', name: 'Drywall & paint', desc: 'Holes, cracks and water stains patched and painted to match.', price: 'Patches from $150' },
+        { icon: '🚪', name: 'Doors & windows', desc: 'Sticking doors, new locks and handles, screens, weatherstripping.', price: 'From $95' },
+        { icon: '📺', name: 'Mounting & hanging', desc: 'TVs, shelves, mirrors, curtain rods and art, level and secure.', price: 'From $95' },
+        { icon: '💡', name: 'Fixtures', desc: 'Swap light fixtures, ceiling fans, outlet covers and smoke detectors.', price: 'From $125' },
+        { icon: '🛠️', name: 'Odd jobs list', desc: 'Got a list? Book a half day and we knock out as many as fit.', price: 'Half day $325' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
