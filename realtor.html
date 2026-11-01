@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Dana Reyes Homes sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -52,7 +54,8 @@ a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
           <span><strong style="color: #FFFFFF; font-size: 24px; display: block">101%</strong>of list price, on average</span>
         </div>
       </div>
-      <form style="flex: 1 1 380px; min-width: 0; max-width: 460px; background: #FFFFFF; color: #111827; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0,0,0,0.25)" aria-label="Free home valuation">
+      <form style="flex: 1 1 380px; min-width: 0; max-width: 460px; background: #FFFFFF; color: #111827; border-radius: 20px; padding: 28px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 24px 60px rgba(0,0,0,0.25)" aria-label="Free home valuation" onsubmit="return false">
+        <sc-if value="{{!done.estimate}}">
         <div>
           <p style="margin: 0; font-size: 20px; font-weight: 800">Free home valuation</p>
           <p style="margin: 4px 0 0; font-size: 14px; color: #6B7280">You'll hear back from Dana within one business day.</p>
@@ -76,8 +79,17 @@ a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
             <option>Over a year</option>
           </select>
         </label>
-        <button type="button" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Get my estimate</button>
-        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">[Connect to CRM or email. Add consent text per brokerage rules.]</p>
+        <button type="button" onClick="{{complete('estimate')}}" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Get my estimate</button>
+        </sc-if>
+        <sc-if value="{{done.estimate}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">🏡</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 800">Got it, thanks!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4B5563">Dana will look at recent sales near you and reply within one business day.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B7280">(Sample site: your request would go to the owner's inbox. Nothing was sent.)</p>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">Sample site: nothing is booked or charged.</p>
       </form>
     </div>
   </section>
@@ -180,6 +192,7 @@ a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #CBD5E1">Pick a time that works. We'll meet by phone, video or at the house. No pressure, no paperwork.</p>
       </div>
       <div style="flex: 0 1 380px; min-width: 0; background: #FFFFFF; color: #111827; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 12px">
+        <sc-if value="{{!done.consult}}">
         <p style="margin: 0; font-size: 14px; font-weight: 600; color: #6B7280">Next available</p>
         <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
           <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Tue 4 · 10:00 AM</span>
@@ -187,8 +200,18 @@ a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
           <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Wed 5 · 12:00 PM</span>
           <span style="padding: 12px; border: 1px solid #D1D5DB; border-radius: 10px; text-align: center; font-size: 14px; font-weight: 600">Sat 8 · 9:00 AM</span>
         </div>
-        <button type="button" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 13px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; min-height: 46px; cursor: pointer">Confirm consult</button>
-        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">[Replace with scheduling embed.]</p>
+        <button type="button" onClick="{{complete('consult')}}" style="font: inherit; background: #1D4ED8; color: #FFFFFF; border: 0; padding: 13px 18px; border-radius: 10px; font-weight: 600; font-size: 15px; min-height: 46px; cursor: pointer">Confirm consult</button>
+        </sc-if>
+        <sc-if value="{{done.consult}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 20px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">📅</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 800">You're on the calendar!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4B5563">Tue 4 · 5:30 PM. A confirmation email and a reminder the day before are on their way.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B7280">(Sample site: in the real version this would hold your spot and send a confirmation.)</p>
+            <button type="button" onClick="{{reset('consult')}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #D1D5DB; color: #111827; padding: 10px 18px; border-radius: 10px; font-weight: 600; min-height: 44px; cursor: pointer">Pick another time</button>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6B7280; text-align: center">Sample site: nothing is booked or charged.</p>
       </div>
     </div>
   </section>
@@ -207,8 +230,15 @@ a{color:#1D4ED8;text-decoration:none}a:hover{color:#1E40AF}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2600}}'>
 class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { done: {} };
+  }
   renderVals() {
-    return {};
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
+    return { done: this.state.done, complete, reset };
   }
 }
 </script>

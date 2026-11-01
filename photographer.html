@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Wren Avenue Studio sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -75,7 +77,7 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
       </div>
       <div style="columns: 3 260px; column-gap: 16px">
         <sc-for list="{{gallery}}" as="g" hint-placeholder-count="9">
-          <img src="{{g.src}}" alt="{{g.alt}}" style="break-inside: avoid; margin-bottom: 16px; width: 100%; height: {{g.h}}; object-fit: cover; border-radius: 4px; display: block; background: {{g.tone}}">
+          <img dc-src="{{g.src}}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="{{g.alt}}" style="break-inside: avoid; margin-bottom: 16px; width: 100%; height: {{g.h}}; object-fit: cover; border-radius: 4px; display: block; background: {{g.tone}}">
         </sc-for>
       </div>
       <p style="margin: 0; font-size: 14px; color: #6B6862">More on <a href="https://instagram.com" style="font-weight: 700">Instagram</a>. Sample photos from Pexels stand in for the photographer's own work.</p>
@@ -151,6 +153,7 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
         </ul>
       </div>
       <div style="flex: 1 1 440px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 20px">
+        <sc-if value="{{!done.booked}}">
         <div style="display: flex; flex-direction: column; gap: 8px">
           <p style="margin: 0; font-size: 13px; font-weight: 700; color: #6B6862">1. Session</p>
           <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
@@ -173,8 +176,18 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
           <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4A4843">Retainer due today</span><span style="font-weight: 800; font-size: 18px">{{retainer}}</span></div>
           <div style="display: flex; justify-content: space-between; gap: 12px"><span style="color: #4A4843">Balance on session day</span><span style="font-weight: 700">{{balance}}</span></div>
         </div>
-        <button type="button" style="font: inherit; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Pay retainer &amp; book</button>
-        <p style="margin: 0; font-size: 12px; color: #6B6862; text-align: center">[Replace this block with the live booking and payment embed.]</p>
+        <button type="button" onClick="{{complete('booked')}}" style="font: inherit; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Pay retainer &amp; book</button>
+        </sc-if>
+        <sc-if value="{{done.booked}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">📷</p>
+            <p style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em">Your date is booked!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4843">{{summary}}. {{retainer}} retainer paid; {{balance}} is due on the day. Your confirmation and prep guide are on their way by email.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B6862">(Sample site: in the real version this would hold your date and send a confirmation.)</p>
+            <button type="button" onClick="{{reset('booked')}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #CFCAC2; color: #161616; padding: 10px 18px; border-radius: 4px; font-weight: 700; min-height: 44px; cursor: pointer">Book another</button>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6B6862; text-align: center">Sample site: nothing is booked or charged.</p>
       </div>
     </div>
   </section>
@@ -209,7 +222,12 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
             <p style="margin: 0; font-size: 13px; color: #6B6862">{{rentalLabel}}</p>
             <p style="margin: 0; font-size: 22px; font-weight: 800">{{rentalPrice}}</p>
           </div>
-          <button type="button" style="font: inherit; background: #B33F0E; color: #FFFFFF; border: 0; padding: 13px 20px; border-radius: 4px; font-weight: 700; font-size: 14px; min-height: 48px; cursor: pointer">Pick a time</button>
+          <sc-if value="{{!done.studio}}">
+            <button type="button" onClick="{{complete('studio')}}" style="font: inherit; background: #B33F0E; color: #FFFFFF; border: 0; padding: 13px 20px; border-radius: 4px; font-weight: 700; font-size: 14px; min-height: 48px; cursor: pointer">Pick a time</button>
+          </sc-if>
+          <sc-if value="{{done.studio}}">
+            <p role="status" style="margin: 0; flex: 1 1 200px; font-size: 14px; line-height: 1.5; color: #4A4843">Sample site: in the real version this would open the studio calendar and checkout.</p>
+          </sc-if>
         </div>
         <p style="margin: 0; font-size: 12px; color: #6B6862">Paid in full at booking. Cancel 48 hours ahead for a full refund.</p>
       </div>
@@ -234,7 +252,7 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
         <span style="font-size: 13px; font-weight: 800; letter-spacing: 0.18em; color: #B33F0E">03</span>
         <h3 style="margin: 0; font-size: 19px; font-weight: 800">Private gallery in 2 weeks</h3>
         <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #4A4843">Download, share and order prints from your own online gallery.</p>
-        <a href="#galleries" style="font-weight: 700; font-size: 14px">Client gallery login →</a>
+        <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #6B6862">Your private gallery link arrives by email about two weeks after the session.</p>
       </div>
     </div>
     <blockquote style="margin: 8px 0 0; padding: 28px 32px; background: #FFFFFF; border: 1px solid #E2E0DB; border-radius: 6px; font-size: 20px; line-height: 1.55; font-weight: 600; letter-spacing: -0.01em">
@@ -251,7 +269,8 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
         <h2 style="margin: 0; font-size: 40px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.1">Check your date.</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A4843">Tell us about your day and we'll reply within 24 hours with availability and a custom quote. A signed contract and 30% retainer hold the date.</p>
       </div>
-      <form style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" aria-label="Wedding and event inquiry">
+      <form style="flex: 1 1 460px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px" aria-label="Wedding and event inquiry" onsubmit="return false">
+        <sc-if value="{{!done.inquiry}}">
         <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700">Names
           <input type="text" name="names" placeholder="You and your partner" style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; min-height: 46px; background: #FFFFFF">
         </label>
@@ -283,7 +302,16 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
         <label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; grid-column: 1 / -1">Tell us about it
           <textarea name="notes" rows="3" placeholder="Guest count, style you love, must-have shots..." style="font: inherit; font-weight: 500; padding: 12px 14px; border: 1px solid #CFCAC2; border-radius: 4px; resize: vertical; background: #FFFFFF"></textarea>
         </label>
-        <button type="button" style="font: inherit; grid-column: 1 / -1; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Send inquiry</button>
+        <button type="button" onClick="{{complete('inquiry')}}" style="font: inherit; grid-column: 1 / -1; background: #161616; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 4px; font-weight: 700; font-size: 15px; min-height: 48px; cursor: pointer; letter-spacing: 0.03em">Send inquiry</button>
+        </sc-if>
+        <sc-if value="{{done.inquiry}}">
+          <div role="status" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 28px 8px; background: #F7F7F5; border: 1px solid #E2E0DB; border-radius: 6px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">💌</p>
+            <p style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em">Got it, thanks!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A4843">We'll reply within 24 hours with availability and a custom quote.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B6862">(Sample site: your inquiry would go to the owner's inbox. Nothing was sent.)</p>
+          </div>
+        </sc-if>
       </form>
     </div>
   </section>
@@ -309,9 +337,12 @@ a{color:#B33F0E;text-decoration:none}a:hover{color:#8A300A}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { filter: 'all', session: 1, date: 2, rental: 1 };
+    this.state = { filter: 'all', session: 1, date: 2, rental: 1, done: {} };
   }
   renderVals() {
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
     const on = { border: '#161616', bg: '#161616', fg: '#FFFFFF' };
     const off = { border: '#CFCAC2', bg: '#FFFFFF', fg: '#161616' };
     const filterDefs = [
@@ -350,6 +381,7 @@ class Component extends DCLogic {
     const r = rentalDefs[this.state.rental];
     const money = (n) => '$' + n.toLocaleString('en-US');
     return {
+      done: this.state.done, complete, reset,
       filters: filterDefs.map((d) => ({
         label: d.label,
         pressed: d.id === f ? 'true' : 'false',

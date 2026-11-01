@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Crestline Barber Co. sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -89,7 +91,12 @@ h1,h2,.bebas{font-family:"Bebas Neue",Inter,sans-serif!important;font-weight:400
       <div style="flex: 0 1 340px; min-width: 0; background: #F6F1E7; color: #151515; border-radius: 10px; padding: 28px; display: flex; flex-direction: column; gap: 12px; box-shadow: 10px 10px 0 #B3261E">
         <p class="bebas" style="margin: 0; font-size: 56px; line-height: 1">$65<span style="font-family: Inter, sans-serif; font-size: 16px; font-weight: 500; color: #6B645B; letter-spacing: 0"> / month</span></p>
         <p style="margin: 0; font-size: 15px; color: #55504A">Save $15 a month on two fades</p>
-        <button type="button" style="font: inherit; border: 0; background: #151515; color: #FFFFFF; padding: 13px; border-radius: 6px; font-weight: 700; min-height: 46px; cursor: pointer">Join the club</button>
+        <sc-if value="{{!done.club}}">
+          <button type="button" onClick="{{complete('club')}}" style="font: inherit; border: 0; background: #151515; color: #FFFFFF; padding: 13px; border-radius: 6px; font-weight: 700; min-height: 46px; cursor: pointer">Join the club</button>
+        </sc-if>
+        <sc-if value="{{done.club}}">
+          <p role="status" style="margin: 0; font-size: 14px; line-height: 1.5; color: #55504A">Sample site: in the real version this would open checkout for your membership.</p>
+        </sc-if>
       </div>
     </div>
   </section>
@@ -128,6 +135,7 @@ h1,h2,.bebas{font-family:"Bebas Neue",Inter,sans-serif!important;font-weight:400
         </ul>
       </div>
       <div style="flex: 1 1 400px; min-width: 0; background: #F6F1E7; color: #151515; border-radius: 10px; padding: 26px; display: flex; flex-direction: column; gap: 18px">
+        <sc-if value="{{!done.booked}}">
         <div style="display: flex; flex-direction: column; gap: 8px">
           <p style="margin: 0; font-size: 14px; font-weight: 700; color: #6B645B">1. Service</p>
           <div style="display: flex; flex-wrap: wrap; gap: 8px">
@@ -162,9 +170,19 @@ h1,h2,.bebas{font-family:"Bebas Neue",Inter,sans-serif!important;font-weight:400
             <p style="margin: 0; font-size: 13px; color: #6B645B">{{summary}}</p>
             <p style="margin: 0; font-size: 20px; font-weight: 800">{{price}} · pay in shop</p>
           </div>
-          <button type="button" style="font: inherit; background: #B3261E; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 6px; font-weight: 700; font-size: 15px; min-height: 46px; cursor: pointer">Hold my spot</button>
+          <button type="button" onClick="{{complete('booked')}}" style="font: inherit; background: #B3261E; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 6px; font-weight: 700; font-size: 15px; min-height: 46px; cursor: pointer">Hold my spot</button>
         </div>
-        <p style="margin: 0; font-size: 12px; color: #6B645B; text-align: center">[Replace this block with the live booking embed.]</p>
+        </sc-if>
+        <sc-if value="{{done.booked}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">💈</p>
+            <p class="bebas" style="margin: 0; font-size: 34px; line-height: 1">Your spot is held!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #55504A">{{summary}}. Pay {{price}} in the shop. A text reminder arrives the day before.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B645B">(Sample site: in the real version this would hold your spot and send a confirmation.)</p>
+            <button type="button" onClick="{{reset('booked')}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #C9BFA9; color: #151515; padding: 10px 18px; border-radius: 6px; font-weight: 600; min-height: 44px; cursor: pointer">Book another</button>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6B645B; text-align: center">Sample site: nothing is booked or charged.</p>
       </div>
     </div>
   </section>
@@ -194,9 +212,12 @@ h1,h2,.bebas{font-family:"Bebas Neue",Inter,sans-serif!important;font-weight:400
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { service: 1, barber: 0, day: 1, time: 2 };
+    this.state = { service: 1, barber: 0, day: 1, time: 2, done: {} };
   }
   renderVals() {
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
     const sel = { border: '#151515', bg: '#151515', fg: '#FFFFFF' };
     const off = { border: '#C9BFA9', bg: '#FFFFFF', fg: '#151515' };
     const svc = ['Classic cut', 'Skin fade', 'Cut + beard', 'Beard trim'];
@@ -209,6 +230,7 @@ class Component extends DCLogic {
       return { label, ...(on ? sel : off), pick: () => this.setState({ [key]: i }) };
     });
     return {
+      done: this.state.done, complete, reset,
       services: mk(svc, 'service'),
       barbers: mk(barbers, 'barber'),
       days: mk(dayNames, 'day'),

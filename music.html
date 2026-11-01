@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Linden Street Music sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -100,20 +102,35 @@ h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif!important}
           <p style="margin: 0; font-size: 16px; font-weight: 700; color: #6E6585">30 min weekly</p>
           <p class="serif" style="margin: 0; font-size: 38px; font-weight: 700">$150<span style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 400; color: #6E6585"> / month</span></p>
           <p style="margin: 0; font-size: 15px; color: #6B3FA0; font-weight: 700">Save $10 a month</p>
-          <button type="button" style="font: inherit; margin-top: auto; border: 2px solid #22183A; background: #FFFFFF; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          <sc-if value="{{!done.plan30}}">
+            <button type="button" onClick="{{complete('plan30')}}" style="font: inherit; margin-top: auto; border: 2px solid #22183A; background: #FFFFFF; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          </sc-if>
+          <sc-if value="{{done.plan30}}">
+            <p role="status" style="margin: auto 0 0; font-size: 14px; line-height: 1.5; color: #4A3F63">Sample site: in the real version this would start your monthly plan at checkout.</p>
+          </sc-if>
         </div>
         <div style="background: #22183A; color: #FFFFFF; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px; position: relative">
           <span style="position: absolute; top: -12px; left: 22px; background: #E7C873; color: #22183A; font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.06em">Most popular</span>
           <p style="margin: 0; font-size: 16px; font-weight: 700; color: #D9CCF0">45 min weekly</p>
           <p class="serif" style="margin: 0; font-size: 38px; font-weight: 700">$205<span style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 400; color: #D9CCF0"> / month</span></p>
           <p style="margin: 0; font-size: 15px; color: #E7C873; font-weight: 700">Save $15 a month</p>
-          <button type="button" style="font: inherit; margin-top: auto; border: 0; background: #E7C873; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          <sc-if value="{{!done.plan45}}">
+            <button type="button" onClick="{{complete('plan45')}}" style="font: inherit; margin-top: auto; border: 0; background: #E7C873; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          </sc-if>
+          <sc-if value="{{done.plan45}}">
+            <p role="status" style="margin: auto 0 0; font-size: 14px; line-height: 1.5; color: #D9CCF0">Sample site: in the real version this would start your monthly plan at checkout.</p>
+          </sc-if>
         </div>
         <div style="background: #FFFFFF; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
           <p style="margin: 0; font-size: 16px; font-weight: 700; color: #6E6585">60 min weekly</p>
           <p class="serif" style="margin: 0; font-size: 38px; font-weight: 700">$260<span style="font-family: 'Source Sans 3', sans-serif; font-size: 15px; font-weight: 400; color: #6E6585"> / month</span></p>
           <p style="margin: 0; font-size: 15px; color: #6B3FA0; font-weight: 700">Save $20 a month</p>
-          <button type="button" style="font: inherit; margin-top: auto; border: 2px solid #22183A; background: #FFFFFF; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          <sc-if value="{{!done.plan60}}">
+            <button type="button" onClick="{{complete('plan60')}}" style="font: inherit; margin-top: auto; border: 2px solid #22183A; background: #FFFFFF; color: #22183A; padding: 12px; border-radius: 10px; font-weight: 700; min-height: 46px; cursor: pointer">Choose</button>
+          </sc-if>
+          <sc-if value="{{done.plan60}}">
+            <p role="status" style="margin: auto 0 0; font-size: 14px; line-height: 1.5; color: #4A3F63">Sample site: in the real version this would start your monthly plan at checkout.</p>
+          </sc-if>
         </div>
       </div>
     </div>
@@ -147,6 +164,7 @@ h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif!important}
         </ul>
       </div>
       <div style="flex: 1 1 400px; min-width: 0; background: #FBF8F3; color: #22183A; border-radius: 16px; padding: 26px; display: flex; flex-direction: column; gap: 18px">
+        <sc-if value="{{!done.booked}}">
         <div style="display: flex; flex-direction: column; gap: 8px">
           <p style="margin: 0; font-size: 15px; font-weight: 700; color: #6E6585">1. Instrument</p>
           <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
@@ -181,9 +199,19 @@ h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif!important}
             <p style="margin: 0; font-size: 14px; color: #6E6585">{{summary}}</p>
             <p style="margin: 0; font-size: 20px; font-weight: 700">Free trial · 20 min</p>
           </div>
-          <button type="button" style="font: inherit; background: #6B3FA0; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 16px; min-height: 46px; cursor: pointer">Book my trial</button>
+          <button type="button" onClick="{{complete('booked')}}" style="font: inherit; background: #6B3FA0; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 10px; font-weight: 700; font-size: 16px; min-height: 46px; cursor: pointer">Book my trial</button>
         </div>
-        <p style="margin: 0; font-size: 12px; color: #6E6585; text-align: center">[Replace this block with the live booking embed.]</p>
+        </sc-if>
+        <sc-if value="{{done.booked}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">🎶</p>
+            <p class="serif" style="margin: 0; font-size: 26px; font-weight: 700">Your trial is booked!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A3F63">{{summary}}. Ms. Elena will email a short form about the student, and a reminder text arrives the day before.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6E6585">(Sample site: in the real version this would hold your spot and send a confirmation.)</p>
+            <button type="button" onClick="{{reset('booked')}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #DDD3C2; color: #22183A; padding: 10px 18px; border-radius: 10px; font-weight: 700; min-height: 44px; cursor: pointer">Book another</button>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6E6585; text-align: center">Sample site: nothing is booked or charged.</p>
       </div>
     </div>
   </section>
@@ -213,9 +241,12 @@ h1,h2,h3,.serif{font-family:"Playfair Display",Georgia,serif!important}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { instrument: 0, place: 0, day: 2, time: 1 };
+    this.state = { instrument: 0, place: 0, day: 2, time: 1, done: {} };
   }
   renderVals() {
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
     const sel = { border: '#6B3FA0', bg: '#6B3FA0', fg: '#FFFFFF' };
     const off = { border: '#DDD3C2', bg: '#FFFFFF', fg: '#22183A' };
     const instruments = ['Piano', 'Guitar'];
@@ -227,6 +258,7 @@ class Component extends DCLogic {
       return { label, ...(on ? sel : off), pick: () => this.setState({ [key]: i }) };
     });
     return {
+      done: this.state.done, complete, reset,
       instruments: mk(instruments, 'instrument'),
       places: mk(places, 'place'),
       days: mk(dayNames, 'day'),

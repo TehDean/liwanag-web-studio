@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Maple and Thyme sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -199,7 +201,8 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
         <strong>Booking fast?</strong> Saturdays in June, September and October fill 2-3 months ahead.
       </div>
     </div>
-    <form style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 28px; border: 1px solid #EADFD2; border-radius: 20px; background: #FFFFFF" aria-label="Request a quote">
+    <form style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: 28px; border: 1px solid #EADFD2; border-radius: 20px; background: #FFFFFF" aria-label="Request a quote" onsubmit="return false">
+      <sc-if value="{{!done.quote}}">
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600">Name
         <input type="text" name="name" style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; min-height: 46px">
       </label>
@@ -224,8 +227,17 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
       <label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; grid-column: 1 / -1">Anything we should know?
         <textarea name="notes" rows="3" placeholder="Allergies, venue, style of service, budget range..." style="font: inherit; font-weight: 400; padding: 12px 14px; border: 1px solid #D9CCBD; border-radius: 10px; resize: vertical"></textarea>
       </label>
-      <button type="button" style="font: inherit; grid-column: 1 / -1; background: #9A4A1E; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Send my request</button>
-      <p style="margin: 0; grid-column: 1 / -1; font-size: 13px; color: #7A6657; text-align: center">No commitment. [Connect this form to the inquiry inbox and quote template.]</p>
+      <button type="button" onClick="{{complete('quote')}}" style="font: inherit; grid-column: 1 / -1; background: #9A4A1E; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 12px; font-weight: 600; font-size: 16px; min-height: 48px; cursor: pointer">Send my request</button>
+      </sc-if>
+      <sc-if value="{{done.quote}}">
+        <div role="status" style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 28px 8px">
+          <p style="margin: 0; font-size: 40px" aria-hidden="true">🍽️</p>
+          <p style="margin: 0; font-family: Fraunces, Georgia, serif; font-size: 26px; font-weight: 600">Got it, thanks!</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #5C4A3C">We'll reply within 24 hours with a proposed menu and price. If your date is open, you can hold it with a deposit right from the quote email.</p>
+          <p style="margin: 4px 0 0; font-size: 12px; color: #7A6657">(Sample site: your request would go to the owner's inbox. Nothing was sent.)</p>
+        </div>
+      </sc-if>
+      <p style="margin: 0; grid-column: 1 / -1; font-size: 13px; color: #7A6657; text-align: center">No commitment. Sample site: nothing is booked or charged.</p>
     </form>
   </section>
 
@@ -252,9 +264,12 @@ a{color:#9A4A1E;text-decoration:none}a:hover{color:#7A3813}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { tab: 0, qty: [1, 0, 1, 0, 0], day: 1, ordered: false };
+    this.state = { tab: 0, qty: [1, 0, 1, 0, 0], day: 1, ordered: false, done: {} };
   }
   renderVals() {
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
     const tabs = ['Weddings & parties', 'Office lunches', 'Desserts & baking'];
     const menus = [
       [
@@ -290,6 +305,7 @@ class Component extends DCLogic {
     const count = q.reduce((a, b) => a + b, 0);
     const total = bake.reduce((sum, b, i) => sum + b.price * q[i], 0);
     return {
+      done: this.state.done, complete, reset,
       bakeItems: bake.map((b, i) => ({ name: b.name, desc: b.desc, price: '$' + b.price, qty: q[i], minus: () => setQ(i, -1), plus: () => setQ(i, 1) })),
       pickupDays: days.map((label, i) => ({ label, border: i === this.state.day ? '#9A4A1E' : '#D9CCBD', bg: i === this.state.day ? '#9A4A1E' : '#FFFFFF', fg: i === this.state.day ? '#FFFFFF' : '#2A1D14', pick: () => this.setState({ day: i }) })),
       orderSummary: count + (count === 1 ? ' item' : ' items') + ' · pickup ' + days[this.state.day],

@@ -65,6 +65,10 @@
     var el = ns ? document.createElementNS(ns, node.localName) : document.createElement(tag);
     Array.prototype.forEach.call(node.attributes, function (a) {
       var name = a.name, v = a.value;
+      // dc-src="{{…}}" becomes src when rendered, so the browser never fetches the raw template
+      // text from the hidden <x-dc>. A static src on the same element is just a placeholder: skip it.
+      if (name === 'dc-src') name = 'src';
+      else if (name === 'src' && node.hasAttribute('dc-src')) return;
       if (v.indexOf('{{') < 0) { el.setAttribute(name, v); return; }
       if (/^on/i.test(name)) {
         var ex = single(v), sc = scope;

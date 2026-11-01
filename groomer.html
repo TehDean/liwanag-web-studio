@@ -5,6 +5,8 @@
 <meta charset="utf-8">
 <title>Sudsy Paws Grooming sample site</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-192.png" sizes="192x192" type="image/png">
 <style>x-dc{display:none}</style>
 <script src="dc.js"></script>
 </head>
@@ -89,7 +91,12 @@ h1,h2,h3,.fred{font-family:Fredoka,Nunito,sans-serif!important}
       <div style="flex: 0 1 320px; min-width: 0; background: #FFFFFF; color: #1E3A3A; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 10px">
         <p class="fred" style="margin: 0; font-size: 44px; font-weight: 700; line-height: 1">10% off</p>
         <p style="margin: 0; font-size: 15px; color: #3F5C5C">every full groom, any size</p>
-        <button type="button" style="font: inherit; border: 0; background: #FFC94D; color: #1E3A3A; padding: 13px; border-radius: 999px; font-weight: 800; min-height: 46px; cursor: pointer">Start the plan</button>
+        <sc-if value="{{!done.plan}}">
+          <button type="button" onClick="{{complete('plan')}}" style="font: inherit; border: 0; background: #FFC94D; color: #1E3A3A; padding: 13px; border-radius: 999px; font-weight: 800; min-height: 46px; cursor: pointer">Start the plan</button>
+        </sc-if>
+        <sc-if value="{{done.plan}}">
+          <p role="status" style="margin: 0; font-size: 14px; line-height: 1.5; color: #3F5C5C">Sample site: in the real version this would open booking with the plan discount applied.</p>
+        </sc-if>
       </div>
     </div>
   </section>
@@ -126,6 +133,7 @@ h1,h2,h3,.fred{font-family:Fredoka,Nunito,sans-serif!important}
         </ul>
       </div>
       <div style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 24px; padding: 26px; display: flex; flex-direction: column; gap: 18px; box-shadow: 0 16px 40px rgba(15, 124, 124, 0.12)">
+        <sc-if value="{{!done.booked}}">
         <div style="display: flex; flex-direction: column; gap: 8px">
           <p style="margin: 0; font-size: 14px; font-weight: 800; color: #6B7F7F">1. Your dog's size</p>
           <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
@@ -160,9 +168,19 @@ h1,h2,h3,.fred{font-family:Fredoka,Nunito,sans-serif!important}
             <p style="margin: 0; font-size: 13px; color: #6B7F7F">{{summary}}</p>
             <p style="margin: 0; font-size: 20px; font-weight: 800">{{price}} · $20 deposit today</p>
           </div>
-          <button type="button" style="font: inherit; background: #0F7C7C; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 999px; font-weight: 800; font-size: 15px; min-height: 46px; cursor: pointer">Pay deposit &amp; book</button>
+          <button type="button" onClick="{{complete('booked')}}" style="font: inherit; background: #0F7C7C; color: #FFFFFF; border: 0; padding: 12px 20px; border-radius: 999px; font-weight: 800; font-size: 15px; min-height: 46px; cursor: pointer">Pay deposit &amp; book</button>
         </div>
-        <p style="margin: 0; font-size: 12px; color: #6B7F7F; text-align: center">[Replace this block with the live booking embed.]</p>
+        </sc-if>
+        <sc-if value="{{done.booked}}">
+          <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
+            <p style="margin: 0; font-size: 40px" aria-hidden="true">🐾</p>
+            <p class="fred" style="margin: 0; font-size: 26px; font-weight: 700">You're booked!</p>
+            <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #3F5C5C">{{summary}}. $20 deposit paid, {{price}} total. We'll text you the day before, and again when your pup is ready.</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #6B7F7F">(Sample site: in the real version this would hold your spot and send a confirmation.)</p>
+            <button type="button" onClick="{{reset('booked')}}" style="font: inherit; align-self: center; margin-top: 6px; background: transparent; border: 1px solid #D6E9E5; color: #1E3A3A; padding: 10px 18px; border-radius: 999px; font-weight: 700; min-height: 44px; cursor: pointer">Book another</button>
+          </div>
+        </sc-if>
+        <p style="margin: 0; font-size: 12px; color: #6B7F7F; text-align: center">Sample site: nothing is booked or charged.</p>
       </div>
     </div>
   </section>
@@ -192,9 +210,12 @@ h1,h2,h3,.fred{font-family:Fredoka,Nunito,sans-serif!important}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { size: 0, service: 1, day: 1, time: 0 };
+    this.state = { size: 0, service: 1, day: 1, time: 0, done: {} };
   }
   renderVals() {
+    // Sample-site confirmations: complete('x') shows the thank-you for that button, reset('x') brings the button back.
+    const complete = (k) => () => this.setState({ done: Object.assign({}, this.state.done, { [k]: true }) });
+    const reset = (k) => () => { const d = Object.assign({}, this.state.done); delete d[k]; this.setState({ done: d }); };
     const sel = { border: '#0F7C7C', bg: '#0F7C7C', fg: '#FFFFFF' };
     const off = { border: '#D6E9E5', bg: '#FFFFFF', fg: '#1E3A3A' };
     const sizes = ['Small', 'Medium', 'Large'];
@@ -207,6 +228,7 @@ class Component extends DCLogic {
       return { label, ...(on ? sel : off), pick: () => this.setState({ [key]: i }) };
     });
     return {
+      done: this.state.done, complete, reset,
       sizes: mk(sizes, 'size'),
       services: mk(svc, 'service'),
       days: mk(dayNames, 'day'),
