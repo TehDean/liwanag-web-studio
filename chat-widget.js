@@ -44,6 +44,7 @@
     ".panel{width:340px;max-width:calc(100vw - 40px);height:460px;max-height:calc(100vh - 110px);background:#fff;border:1px solid #E7E1D8;border-radius:16px;box-shadow:0 16px 40px rgba(0,0,0,.16);display:none;flex-direction:column;overflow:hidden}" +
     ".panel.open{display:flex}" +
     ".head{padding:14px 16px;background:" + dark + ";color:#fff;font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:8px}" +
+    ".ai{display:inline-block;margin-left:8px;padding:2px 7px;border:1px solid rgba(255,255,255,.55);border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.02em;vertical-align:1px}" +
     ".x{background:none;border:0;color:#fff;font-size:20px;line-height:1;cursor:pointer;padding:0 2px}" +
     ".log{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:8px;font-size:14px;line-height:1.45;color:" + dark + "}" +
     ".m{padding:9px 12px;border-radius:12px;max-width:88%;white-space:pre-wrap;word-wrap:break-word}" +
@@ -63,7 +64,7 @@
     "</style>" +
     '<div class="wrap">' +
     '<div class="panel" role="dialog" aria-label="Chat assistant">' +
-    '<div class="head"><span class="title"></span><button class="x" type="button" aria-label="Close chat">&times;</button></div>' +
+    '<div class="head"><span><span class="title"></span><span class="ai">AI assistant</span></span><button class="x" type="button" aria-label="Close chat">&times;</button></div>' +
     '<div class="log" aria-live="polite"></div>' +
     '<form><input type="text" maxlength="800" placeholder="Type your question" aria-label="Your question"><button class="send" type="submit">Send</button></form>' +
     '<div class="note">Automated assistant. Chats are saved to improve answers; please don\'t share card numbers or passwords.</div>' +
@@ -111,6 +112,8 @@
   function greet() {
     if (greeted) return;
     greeted = true;
+    // New Jersey (N.J.S.A. 56:18-2) requires a bot to say so at the start of the chat.
+    add("I'm an automated AI assistant, not a person.", "bot");
     add(cfg.greeting || "Hi! How can I help?", "bot");
     var chips = (cfg.chips || "").split("|").filter(Boolean);
     if (chips.length) {
