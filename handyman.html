@@ -43,7 +43,7 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
   <section id="top" style="background: #1F5A3A; color: #FFFFFF">
     <div style="max-width: 1160px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 48px">
       <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
-        <p style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A33D">Handyman &amp; home repair · Verona, NJ</p>
+        <p style="margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #F4BF5F">Handyman &amp; home repair · Verona, NJ</p>
         <h1 style="margin: 0; font-size: clamp(40px, 6vw, 66px); line-height: 1.02; font-weight: 900; letter-spacing: -0.02em">The small jobs, done right the first time.</h1>
         <p style="margin: 0; font-size: 19px; line-height: 1.55; color: #D6E7DC; max-width: 520px">Leaky faucets, running toilets, drywall patches, shelves, doors that stick. Send a photo of the job and get a free estimate within one business day.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 12px">
@@ -78,7 +78,7 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
         </div>
       </sc-for>
     </div>
-    <p style="margin: 0; font-size: 14px; color: #6A786F">Serving Verona, Cedar Grove, Caldwell, Montclair, West Orange and Essex Fells. Bigger projects (kitchens, baths, new plumbing or gas lines) we'll gladly refer to someone we trust.</p>
+    <p style="margin: 0; font-size: 14px; color: #55625A">Serving Verona, Cedar Grove, Caldwell, Montclair, West Orange and Essex Fells. Bigger projects (kitchens, baths, new plumbing or gas lines) we'll gladly refer to someone we trust.</p>
   </section>
 
   <!-- RECENT WORK -->
@@ -116,11 +116,11 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
     <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
       <blockquote style="margin: 0; padding: 20px 22px; background: #FFFFFF; border: 1px solid #E3DCCD; border-left: 4px solid #E8A33D; border-radius: 12px; font-size: 16px; line-height: 1.6">
         "Sent a photo of our running toilet on Monday, Ray fixed it Tuesday morning. Fair price and he explained exactly what was wrong."
-        <footer style="margin-top: 8px; font-size: 14px; color: #6A786F">★★★★★ · Sample review</footer>
+        <footer style="margin-top: 8px; font-size: 14px; color: #55625A">★★★★★ · Sample review</footer>
       </blockquote>
       <blockquote style="margin: 0; padding: 20px 22px; background: #FFFFFF; border: 1px solid #E3DCCD; border-left: 4px solid #E8A33D; border-radius: 12px; font-size: 16px; line-height: 1.6">
         "Hung three shelves, fixed a sticking door and patched the hallway in one afternoon. Will call again."
-        <footer style="margin-top: 8px; font-size: 14px; color: #6A786F">★★★★★ · Sample review</footer>
+        <footer style="margin-top: 8px; font-size: 14px; color: #55625A">★★★★★ · Sample review</footer>
       </blockquote>
       <a href="https://google.com" target="_blank" rel="noopener" style="font-weight: 700; font-size: 15px">Read more reviews on Google →</a>
     </div>
@@ -132,7 +132,7 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
       <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
         <h2 style="margin: 0; font-size: 40px; font-weight: 900; line-height: 1.1; letter-spacing: -0.01em">Get a free estimate</h2>
         <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #4A5B50">Tell me what needs fixing and add a photo if you can. I'll reply within one business day with a price and a few times I can come by.</p>
-        <p style="margin: 0; font-size: 16px; line-height: 1.6">Rather talk? <a href="tel:+19735550152" style="font-weight: 800">(973) 555-0152</a><br><span style="color: #6A786F; font-size: 14px">Mon–Sat, 8 AM–6 PM</span></p>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6">Rather talk? <a href="tel:+19735550152" style="font-weight: 800">(973) 555-0152</a><br><span style="color: #55625A; font-size: 14px">Mon–Sat, 8 AM–6 PM</span></p>
       </div>
       <form style="flex: 1 1 400px; min-width: 0; background: #FFFFFF; border-radius: 14px; padding: 26px; display: flex; flex-direction: column; gap: 14px; box-shadow: 0 16px 40px rgba(28, 43, 34, 0.1)" aria-label="Request a free estimate" onsubmit="return false">
         <sc-if value="{{!sent}}">
@@ -142,14 +142,14 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
           <label>What needs fixing?<textarea name="job" rows="3" placeholder="e.g. Kitchen faucet drips, and the bathroom door won't close" style="resize: vertical"></textarea></label>
           <label>Add a photo (optional)<input type="file" name="photo" accept="image/*" style="padding: 10px"></label>
           <button type="button" onClick="{{send}}" style="font: inherit; background: #1F5A3A; color: #FFFFFF; border: 0; padding: 14px 20px; border-radius: 8px; font-weight: 800; font-size: 16px; min-height: 48px; cursor: pointer">Send my request</button>
-          <p style="margin: 0; font-size: 12px; color: #6A786F; text-align: center">Your details go only to Steady Hand. No spam, ever.</p>
+          <p style="margin: 0; font-size: 12px; color: #55625A; text-align: center">Your details go only to Steady Hand. No spam, ever.</p>
         </sc-if>
         <sc-if value="{{sent}}">
           <div role="status" style="display: flex; flex-direction: column; gap: 10px; text-align: center; padding: 24px 8px">
             <p style="margin: 0; font-size: 40px" aria-hidden="true">👍</p>
             <p style="margin: 0; font-size: 22px; font-weight: 900">Got it, thanks!</p>
             <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #4A5B50">Ray will reply within one business day with a price and a few times he can come by.</p>
-            <p style="margin: 6px 0 0; font-size: 12px; color: #6A786F">(Sample site: nothing was actually sent.)</p>
+            <p style="margin: 6px 0 0; font-size: 12px; color: #55625A">(Sample site: nothing was actually sent.)</p>
           </div>
         </sc-if>
       </form>
@@ -157,7 +157,7 @@ label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:700}
   </section>
 
   <footer style="border-top: 1px solid #E3DCCD">
-    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #6A786F">
+    <div style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #55625A">
       <span style="font-weight: 900; color: #1C2B22">🔧 Steady Hand Home Repair</span>
       <span>Verona, NJ · (973) 555-0152 · ray@steadyhand.example</span>
       <span>Site by <a href="index.html" style="font-weight: 700">Liwanag Web Studio</a> · Photos: Pexels</span>
