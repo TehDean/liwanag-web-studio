@@ -1,9 +1,5 @@
-# Liwanag Web Studio (preview)
+# Liwanag Web Studio (old address)
 
-Landing page and seven sample client sites (handyman, personal trainer, barbershop, caterer, dog groomer, music teacher, photographer; an older realtor sample, realtor.html, is kept but no longer linked) for a web studio in West Orange, NJ that builds its client sites in code.
-
-All businesses, prices and reviews on the sample sites are fictional. Photos are from Pexels.
-
-The pages ask search engines not to index them until the site moves to liwanagweb.com.
-
-`dc.js` is a small script that renders each page's template and runs its interactive parts (booking pickers, menu tabs, gallery filter, chat bubble).
+The studio site moved to **https://www.liwanagweb.com** on Nov 6, 2026 (a coded Wix Headless site).
+Its source now lives in `TehDean/liwanag-clients/liwanag-studio`. The pages here only send visitors
+to the same page on the new address. Older versions of the static site are in this repo's history.
